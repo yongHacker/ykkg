@@ -4,6 +4,8 @@
 <head>
     <title>永坤首页</title>
     <link rel="stylesheet" type="text/css" href="{$config_siteurl}statics/default/ykkg/css/index.css">
+    <meta name="keywords" content="{$SEO['keyword']}"/>
+    <meta name="description" content="{$SEO['description']}"/>
 </head>
 <body>
     <!-- 轮播图 -->

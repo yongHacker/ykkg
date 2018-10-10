@@ -27,42 +27,14 @@
            </button>
            <div class="collapse navbar-collapse" id="navbarContent">
                <ul class="navbar-nav">
+                   <volist name="category" id="vo">
                    <li class="nav-item active">
-                       <a href="/themes/index.php" class="nav-link">
-                           <p class="en">Home</p>
-                           <p class="zh">首页</p>
+                       <a href="{:U('Index/')}" class="nav-link">
+                           <p class="en">{$vo.catdir}</p>
+                           <p class="zh">{$vo.catname}</p>
                        </a>
                    </li>
-                   <li class="nav-item">
-                       <a href="./about_us.php" class="nav-link">
-                           <p class="en">Into Yongkun</p>
-                           <p class="zh">走进永坤</p>
-                       </a>
-                   </li>
-                   <li class="nav-item">
-                       <a href="./industrial_pattern.php" class="nav-link">
-                           <p class="en">Industrial pattern</p>
-                           <p class="zh">产业格局</p>
-                       </a>
-                   </li>
-                   <li class="nav-item">
-                       <a href="./activities_information.php" class="nav-link">
-                           <p class="en">Activities & Information</p>
-                           <p class="zh">活动与资讯</p>
-                       </a>
-                   </li>
-                   <li class="nav-item">
-                       <a href="./sustainable_development.php" class="nav-link">
-                           <p class="en">Sustainable development</p>
-                           <p class="zh">可持续发展</p>
-                       </a>
-                   </li>
-                   <li class="nav-item">
-                       <a href="./join_us.php" class="nav-link">
-                           <p class="en">Join us</p>
-                           <p class="zh">加入我们</p>
-                       </a>
-                   </li>
+                   </volist>
                </ul>
                <a href="javascript:;" class="navbar-brand hidden-md-down" id="Tel"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt=""></a>
            </div> 

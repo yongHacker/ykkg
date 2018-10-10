@@ -10,8 +10,18 @@ use Common\Controller\Base;
 use Content\Model\ContentModel;
 
 class IndexController extends Base {
+    public function _initialize()
+    {
+        $where = array(
+            'parentid' => 0,
+            'ismenu'  => 1
+        );
+        $category = M('category')->where($where)->order('listorder asc,catid asc')->select();
+        $this->assign('category',$category);
+//        dump($category);exit;
+    }
 
-	//首页
+    //首页
 	public function index() {
 		$page = isset($_GET[C("VAR_PAGE")]) ? $_GET[C("VAR_PAGE")] : 1;
 		$page = max($page, 1);
@@ -31,7 +41,6 @@ class IndexController extends Base {
             'ismenu'  => 1
         );
         $about_catid = M('category')->where($condition)->field('catid')->find();
-//        $join = " left join ".C('DB_PREFIX')."article_data ad on ";
         $about = M('article')->where(array('catid'=>$about_catid['catid']))->join('left join __ARTICLE_DATA__ on __ARTICLE__.id = __ARTICLE_DATA__.id')->find();
 
 
@@ -289,24 +298,5 @@ class IndexController extends Base {
 		$this->assign($info);
 		$this->display("Tags/tag");
 	}
-
-	public function a(){
-        $this->display("Ykkg:a");
-    }
-    public function b(){
-        $this->display("Ykkg:b");
-    }
-    public function c(){
-        $this->display("Ykkg:c");
-    }
-    public function d(){
-        $this->display("Ykkg:d");
-    }
-    public function e(){
-        $this->display("Ykkg:e");
-    }
-    public function f(){
-        $this->display("Ykkg:f");
-    }
 
 }
