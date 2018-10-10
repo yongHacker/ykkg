@@ -10,8 +10,18 @@ use Common\Controller\Base;
 use Content\Model\ContentModel;
 
 class IndexController extends Base {
+    public function _initialize()
+    {
+        parent::_initialize();
+        $where = array(
+            'parentid' => 0,
+            'ismenu'  => 1
+        );
+        $category = M('category')->where($where)->order('listorder asc,catid asc')->select();
+        $this->assign('category',$category);
+    }
 
-	//首页
+    //首页
 	public function index() {
 		$page = isset($_GET[C("VAR_PAGE")]) ? $_GET[C("VAR_PAGE")] : 1;
 		$page = max($page, 1);
@@ -22,12 +32,47 @@ class IndexController extends Base {
 		//生成路径
 		$urls = $this->Url->index($page);
 		$GLOBALS['URLRULE'] = $urls['page'];
+
+        //轮播图
+        $ad = M('position')->where(array('deleted'=>0))->order('posid desc')->select();
+        //关于我们
+        $condition = array(
+            'catname' => array('like','%关于我们%'),
+            'ismenu'  => 1
+        );
+        $about_catid = M('category')->where($condition)->field('catid')->find();
+        $about = M('article')->where(array('catid'=>$about_catid['catid']))->join('left join __ARTICLE_DATA__ on __ARTICLE__.id = __ARTICLE_DATA__.id')->find();
+
+
+        $this->assign('ad',$ad);
+        $this->assign('about',$about);
 		//seo分配到模板
 		$this->assign("SEO", $SEO);
 		//把分页分配到模板
 		$this->assign(C("VAR_PAGE"), $page);
 		$this->display("Index:" . $tp[0]);
 	}
+
+	//走进永坤
+	public function intoYK(){
+        $catid = I('catid');
+        //取主栏目数据
+        $catData = M('category')->where(array('catid'=>$catid))->field('*')->find();
+        $ids = explode(',',$catData['arrchildid']);
+        array_shift($ids);
+        $child_ids = $ids;
+        //取所有子栏目
+        foreach ($child_ids as $k=>$v){
+            $child[$k] = M('category')->where(array('catid'=>$v))->find();
+            $child_article[$k] = M('article')->where(array('catid'=>$v))->join('left join __ARTICLE_DATA__ on __ARTICLE__.id = __ARTICLE_DATA__.id')->order('listorder asc')->find();
+        }
+
+
+        $this->assign('catData',$catData);
+        $this->assign('child',$child);
+        $this->assign('child_article',$child_article);
+        $this->display("Index:about_us");
+    }
 
 	//列表
 	public function lists() {
@@ -274,58 +319,20 @@ class IndexController extends Base {
 		$this->assign($info);
 		$this->display("Tags/tag");
 	}
-    //永坤首页
-	public function a(){
-	    //导航栏
-        $categorys = M('category')->where(array('parentid'=>0))->select();
-        if (!empty($categorys)){
-            foreach($categorys as $key=>$category){
-                $arr[$key] = explode(',', $category['arrchildid']);
-            }
 
-            foreach ($arr as $k=>$v){
-                foreach ($v as $kk=>$vv){
-                    $list[$vv] = M('category')->where(array('catid'=>$vv))->field('catname')->find();
-                }
-                $lists[$k] = $list;
-                unset($list);
-            }
+	//ajax动态请求文章
+	public function ajax_article(){
+        $catid = I('catid');
+        if ($catid){
+            $p = empty(I('page')) ? 0 : I('page')-1;
+            $count = M('article')->where(array('catid'=>$catid))->join('left join __ARTICLE_DATA__ on __ARTICLE__.id = __ARTICLE_DATA__.id')->count();
+            //分页
+            $page = $this->page($count,1,I('page'));
+            $limit = "$p,1";
+            $articles = M('article')->where(array('catid'=>$catid))->join('left join __ARTICLE_DATA__ on __ARTICLE__.id = __ARTICLE_DATA__.id')->limit($limit)->order('listorder asc')->select();
+            $this->ajaxReturn(array('status'=>1,'data'=>$articles,'page'=>$page));
         }
 
-        //轮播图
-        $condition = array('photo.isshow'=>1);
-        $join = " join ".C('DB_PREFIX')."photo_data pd on photo.id=pd.id";
-        $banners = M('photo')->alias('photo')->where($condition)->join($join)->order('photo.id')->select();
-        foreach ($banners as $k=>$v){
-            $imgs[$k] = unserialize($v['imgs']);
-        }
-//        dump($imgs);exit;
-        foreach ($imgs as $k=>$v){
-            foreach ($v as $kk=>$vv){
-                $img[$k][$kk] = $vv['url'];
-            }
-
-        }
-//        dump($img);exit;
-
-        $this->assign('categorys',$lists);
-        $this->assign('img',$img);
-        $this->display("Ykkg:a");
-    }
-    public function b(){
-        $this->display("Ykkg:b");
-    }
-    public function c(){
-        $this->display("Ykkg:c");
-    }
-    public function d(){
-        $this->display("Ykkg:d");
-    }
-    public function e(){
-        $this->display("Ykkg:e");
-    }
-    public function f(){
-        $this->display("Ykkg:f");
     }
 
 }

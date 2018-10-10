@@ -26,7 +26,11 @@
           <th>最大保存条数</th>
           <td><input type="text" name="info[maxnum]" id="maxnum" class="input" size="5" value="10"/> <span>条</span></td>
         </tr>
-      </table>
+        <tr>
+          <th>推荐位图片：</th>
+          <td><Form function="images" parameter="info[image],image,$data['image'],content"/><span class="gray"> 双击可以查看图片！</span></td>
+        </tr>
+  </table>
   </div>
   <div class="">
       <div class="btn_wrap_pd">             
@@ -36,6 +40,7 @@
   </form>
 </div>
 <script src="{$config_siteurl}statics/js/common.js"></script>
+<script type="text/javascript" src="{$config_siteurl}statics/js/content_addtop.js"></script>
 <script type="text/javascript">
 $(function(){
 	category_load();
