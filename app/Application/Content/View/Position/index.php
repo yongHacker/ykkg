@@ -14,6 +14,7 @@
           <td width="50">排序</td>
           <td width="50"  align="center">ID</td>
           <td>推荐位名称</td>
+          <td>推荐位图片</td>
           <td width="100" align="center">所属栏目</td>
           <td width="100" align="center">所属模型</td>
           <td width="240" align="center">管理操作</td>
@@ -25,6 +26,7 @@
             <td><input name='listorders[{$vo.posid}]' type='text' size='2' value='{$vo.listorder}' class="input"></td>
             <td align="center">{$vo.posid}</td>
             <td>{$vo.name}</td>
+            <td><img src="{$vo.image}" style="width: 150px;height: 60px"></td>
             <td align="center">
             <if condition=" empty($vo['catid']) ">
             <font color="#FF0000">无限制</font>

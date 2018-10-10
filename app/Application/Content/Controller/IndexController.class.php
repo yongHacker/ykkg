@@ -22,6 +22,21 @@ class IndexController extends Base {
 		//生成路径
 		$urls = $this->Url->index($page);
 		$GLOBALS['URLRULE'] = $urls['page'];
+
+        //轮播图
+        $ad = M('position')->where(array('deleted'=>0))->order('posid desc')->select();
+        //关于我们
+        $condition = array(
+            'catname' => array('like','%关于我们%'),
+            'ismenu'  => 1
+        );
+        $about_catid = M('category')->where($condition)->field('catid')->find();
+//        $join = " left join ".C('DB_PREFIX')."article_data ad on ";
+        $about = M('article')->where(array('catid'=>$about_catid['catid']))->join('left join __ARTICLE_DATA__ on __ARTICLE__.id = __ARTICLE_DATA__.id')->find();
+
+
+        $this->assign('ad',$ad);
+        $this->assign('about',$about);
 		//seo分配到模板
 		$this->assign("SEO", $SEO);
 		//把分页分配到模板

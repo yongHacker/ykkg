@@ -1,0 +1,99 @@
+.banner-img{
+    height:38.8rem;
+}
+.banner-img .container{
+    position:relative;
+    height:38.8rem;
+}
+.banner-img-title{
+    position:absolute;
+    left:0;
+    bottom:0;
+    margin-left: 9rem;
+    margin-bottom:15.25rem;
+}
+.banner-img-title h1{
+    color:#000;
+    text-align:center;
+    margin:0;
+}
+.banner-img-title h1.en{
+    font-size:2.68rem;
+
+}
+.banner-img-title h1.zh{
+    font-size:2.25rem;
+    margin-top:2rem;
+}
+
+.content .right{
+    flex: 1;
+/*     flex-basis: 58.75rem; */
+}
+.content .col-5{
+    background-color: #999;
+    padding: 0;
+}
+.content .col-5 ul{
+    list-style:none;
+    padding:  0;
+    margin: 0;
+}
+.content .col-5 li a{
+    color:#fff;
+    min-width: 180px;
+    margin-right:  9rem;
+}
+.content .col-5 li:hover a{
+    text-decoration:none;
+}
+.content .col-5 img{
+    vertical-align:top;
+    margin-right:  0.75rem;
+}
+.content .col-5 ul li{
+    display: flex;
+    height:6.5rem;
+    justify-content: flex-end;
+    margin:  0;
+    align-items: center;
+}
+.content .option {min-width: 200px;display: flex;justify-content: flex-start;}
+.content .col-5 ul li:hover .option-text .zh:after{
+    content:'>';
+    margin-left:1rem;
+}
+.content .col-5 li .option-text{
+    display:inline-block;
+    line-height:  1.87rem;
+}
+.content li .option-text p{
+    margin:0;
+    text-align:left;
+}
+.content li .option-text .en{
+    font-size:1.25rem;
+}
+.content li .option-text .zh{
+    font-size:1rem;
+}
+.content .col-7{
+    padding:3.2rem 6.3rem;
+    flex:1;
+
+}
+.content #profile img{
+    width:45.3rem;
+    height:31.1rem;
+}
+#profile h2{
+    margin-top:3.3rem;
+    font-size:0.88rem;
+    color:#C01920;
+    text-indent:2rem;
+}
+#profile p{
+    font-size:0.88rem;
+    color:#525252;
+    text-indent:2rem;
+}

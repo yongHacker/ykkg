@@ -1,0 +1,43 @@
+.act{
+    padding:2rem 0 6.31rem;
+}
+.act a{
+    text-decoration: none !important;
+}
+.act-item{
+    display:flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: space-between;
+}
+a> .act-item {
+    margin-top:1rem;
+}
+.act .act-item-imgbox{
+    width:33rem;
+    height:19rem;
+    margin-right:  1rem;
+    overflow: hidden;
+}
+.act .act-item-content{
+    flex: 1;
+    height: 19rem;
+    align-items: center;
+    background-color: #F7F7F7;
+}
+.act .act-item-content h2{
+    color:#C01920;
+    font-size:1.25rem;
+    font-weight:500;
+    margin:2rem 0 3rem 3rem;
+}
+.act .act-item-content p{
+    color:#525252;
+    text-indent:2rem;
+    margin:0 0 5rem 3rem;
+}
+.act .act-item-content p.act-item-date{
+    font-size:0.88rem;
+    text-indent:unset;
+    margin:0 0 0 3rem;
+}

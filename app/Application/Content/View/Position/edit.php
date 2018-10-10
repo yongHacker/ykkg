@@ -27,6 +27,14 @@
           <td><input type="text" name="info[maxnum]" id="maxnum" class="input" size="5" value="{$maxnum}"/>
             条</td>
         </tr>
+      <tr>
+          <th>推荐位图片</th>
+          <td><img src="{$image}" style="width: 150px;height: 60px"></td>
+      </tr>
+      <tr>
+          <th>推荐位图片：</th>
+          <td><Form function="images" parameter="info[image],image,$data['image'],content"/><span class="gray"> 双击可以查看图片！</span></td>
+      </tr>
       </table>
   </div>
   <div class="">
@@ -38,6 +46,7 @@
   </form>
 </div>
 <script src="{$config_siteurl}statics/js/common.js"></script>
+<script type="text/javascript" src="{$config_siteurl}statics/js/content_addtop.js"></script>
 <script type="text/javascript">
 $(function(){
 	category_load();

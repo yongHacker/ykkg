@@ -1,0 +1,46 @@
+.navbar{
+    min-height: 6rem;
+    padding:0;
+}
+.navbar-brand{
+  padding:0;
+  margin: 0;
+}
+#brand img{
+  width:10rem;
+  height:3rem;
+  margin-right:3rem;
+  margin-left: 5rem;
+}
+#Tel img{
+  width:9rem;
+  height:2rem;
+}
+.nav-link{
+  padding: 0 !important;
+}
+.nav-item{
+    margin-right:1rem;
+    font-size: 1rem;
+    line-height: 2rem;
+    font-weight: 400;
+}
+.nav-item:nth-child(n+4){
+  margin-right:2rem;
+}
+.nav-item img{
+    vertical-align:text-top;
+}
+.nav-item p{
+    margin:0;
+    white-space:  nowrap;
+    text-align:center;
+}
+#Tel{
+    margin-left: 1rem;
+}
+.navbar-light .navbar-nav .active > .nav-link{
+  color:#E60012;
+}
+
+
