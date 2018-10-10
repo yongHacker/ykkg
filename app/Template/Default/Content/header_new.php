@@ -29,7 +29,7 @@
                <ul class="navbar-nav">
                    <volist name="category" id="vo">
                    <li class="nav-item active">
-                       <a href="{:U('Index/')}" class="nav-link">
+                       <a href="{$vo.url}&catid={$vo.catid}" class="nav-link">
                            <p class="en">{$vo.catdir}</p>
                            <p class="zh">{$vo.catname}</p>
                        </a>

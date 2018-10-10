@@ -12,13 +12,13 @@ use Content\Model\ContentModel;
 class IndexController extends Base {
     public function _initialize()
     {
+        parent::_initialize();
         $where = array(
             'parentid' => 0,
             'ismenu'  => 1
         );
         $category = M('category')->where($where)->order('listorder asc,catid asc')->select();
         $this->assign('category',$category);
-//        dump($category);exit;
     }
 
     //首页
@@ -52,6 +52,27 @@ class IndexController extends Base {
 		$this->assign(C("VAR_PAGE"), $page);
 		$this->display("Index:" . $tp[0]);
 	}
+
+	//走进永坤
+	public function intoYK(){
+        $catid = I('catid');
+        //取主栏目数据
+        $catData = M('category')->where(array('catid'=>$catid))->field('*')->find();
+        $ids = explode(',',$catData['arrchildid']);
+        array_shift($ids);
+        $child_ids = $ids;
+        //取所有子栏目
+        foreach ($child_ids as $k=>$v){
+            $child[$k] = M('category')->where(array('catid'=>$v))->find();
+            $child_article[$k] = M('article')->where(array('catid'=>$v))->join('left join __ARTICLE_DATA__ on __ARTICLE__.id = __ARTICLE_DATA__.id')->order('listorder asc')->find();
+        }
+
+
+        $this->assign('catData',$catData);
+        $this->assign('child',$child);
+        $this->assign('child_article',$child_article);
+        $this->display("Index:about_us");
+    }
 
 	//列表
 	public function lists() {
@@ -298,5 +319,20 @@ class IndexController extends Base {
 		$this->assign($info);
 		$this->display("Tags/tag");
 	}
+
+	//ajax动态请求文章
+	public function ajax_article(){
+        $catid = I('catid');
+        if ($catid){
+            $p = empty(I('page')) ? 0 : I('page')-1;
+            $count = M('article')->where(array('catid'=>$catid))->join('left join __ARTICLE_DATA__ on __ARTICLE__.id = __ARTICLE_DATA__.id')->count();
+            //分页
+            $page = $this->page($count,1,I('page'));
+            $limit = "$p,1";
+            $articles = M('article')->where(array('catid'=>$catid))->join('left join __ARTICLE_DATA__ on __ARTICLE__.id = __ARTICLE_DATA__.id')->limit($limit)->order('listorder asc')->select();
+            $this->ajaxReturn(array('status'=>1,'data'=>$articles,'page'=>$page));
+        }
+
+    }
 
 }
