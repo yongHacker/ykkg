@@ -3,7 +3,7 @@
 <body class="J_scroll_fixed">
 <div class="wrap J_check_wrap">
   <Admintemplate file="Common/Nav"/>
-  <div class="h_a">推荐位修改</div>
+  <div class="h_a">推荐位添加</div>
   <form name="myform" action="{:U("add")}" method="post" class="J_ajaxForm">
   <div class="table_full"> 
   <table width="100%" class="table_form contentWrap">

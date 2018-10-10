@@ -112,17 +112,17 @@
         },
         methods: {
             getModuleList: function () {
-                $.post('Admin/Menu/public_getModule', {}, function (res) {
+                $.post('index.php?g=Admin&m=Menu&a=public_getModule', {}, function (res) {
                     vm.moduleList = res.data;
                 }, 'json');
             },
             getControllerList: function () {
-                $.post('Admin/Menu/public_getController', {module: vm.module}, function (res) {
+                $.post('index.php?g=Admin&m=Menu&a=public_getController', {module: vm.module}, function (res) {
                     vm.controllerList = res.data;
                 }, 'json');
             },
             getActionList: function () {
-                $.post('Admin/Menu/public_getAction', {controller: vm.module + '/' + vm.controller}, function (res) {
+                $.post('index.php?g=Admin&m=Menu&a=public_getAction', {controller: vm.module + '/' + vm.controller}, function (res) {
                     vm.actionList = res.data;
                 }, 'json');
             }

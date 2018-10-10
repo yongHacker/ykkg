@@ -274,8 +274,42 @@ class IndexController extends Base {
 		$this->assign($info);
 		$this->display("Tags/tag");
 	}
-
+    //永坤首页
 	public function a(){
+	    //导航栏
+        $categorys = M('category')->where(array('parentid'=>0))->select();
+        if (!empty($categorys)){
+            foreach($categorys as $key=>$category){
+                $arr[$key] = explode(',', $category['arrchildid']);
+            }
+
+            foreach ($arr as $k=>$v){
+                foreach ($v as $kk=>$vv){
+                    $list[$vv] = M('category')->where(array('catid'=>$vv))->field('catname')->find();
+                }
+                $lists[$k] = $list;
+                unset($list);
+            }
+        }
+
+        //轮播图
+        $condition = array('photo.isshow'=>1);
+        $join = " join ".C('DB_PREFIX')."photo_data pd on photo.id=pd.id";
+        $banners = M('photo')->alias('photo')->where($condition)->join($join)->order('photo.id')->select();
+        foreach ($banners as $k=>$v){
+            $imgs[$k] = unserialize($v['imgs']);
+        }
+//        dump($imgs);exit;
+        foreach ($imgs as $k=>$v){
+            foreach ($v as $kk=>$vv){
+                $img[$k][$kk] = $vv['url'];
+            }
+
+        }
+//        dump($img);exit;
+
+        $this->assign('categorys',$lists);
+        $this->assign('img',$img);
         $this->display("Ykkg:a");
     }
     public function b(){

@@ -255,6 +255,7 @@ function submit_images(uploadid, returnid) {
     var d = uploadid.iframe.contentWindow;
     var in_content = d.$("#att-status").html().substring(1);
     var in_content = in_content.split('|');
+    $('#' + returnid).attr("value",'');
     IsImg(in_content[0]) ? $('#' + returnid).attr("value", in_content[0]) : alert('选择的类型必须为图片类型');
 }
 
@@ -263,6 +264,7 @@ function submit_attachment(uploadid, returnid) {
     var d = uploadid.iframe.contentWindow;
     var in_content = d.$("#att-status").html().substring(1);
     var in_content = in_content.split('|');
+    $('#' + returnid).attr("value",'');
     $('#' + returnid).attr("value", in_content[0]);
 }
 

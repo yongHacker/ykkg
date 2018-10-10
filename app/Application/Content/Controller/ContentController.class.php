@@ -223,7 +223,12 @@ class ContentController extends AdminBase {
                 if ($this->model[$modelid]['disabled'] == 1) {
                     $this->error("模型被禁用！");
                 }
+                if (count($_POST['info']['posid'])>1){
+                    $_POST['info']['isshow'] = 1;
+                }
+
                 $status = $this->Content->data($_POST['info'])->add();
+
                 if ($status) {
                     $this->success("添加成功！");
                 } else {
