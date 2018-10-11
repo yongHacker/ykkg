@@ -8,6 +8,7 @@ namespace Content\Controller;
 
 use Common\Controller\Base;
 use Content\Model\ContentModel;
+use Libs\Util\Page;
 
 class IndexController extends Base {
     public function _initialize()
@@ -42,10 +43,12 @@ class IndexController extends Base {
         );
         $about_catid = M('category')->where($condition)->field('catid')->find();
         $about = M('article')->where(array('catid'=>$about_catid['catid']))->join('left join __ARTICLE_DATA__ on __ARTICLE__.id = __ARTICLE_DATA__.id')->find();
-
-
+        //新闻中心
+        $video = M('video')->where(array('deleted'=>0))->order('id desc')->limit(4)->select();
+//        dump($video);exit;
         $this->assign('ad',$ad);
         $this->assign('about',$about);
+        $this->assign('video',$video);
 		//seo分配到模板
 		$this->assign("SEO", $SEO);
 		//把分页分配到模板
@@ -55,6 +58,82 @@ class IndexController extends Base {
 
 	//走进永坤
 	public function intoYK(){
+        //取所有子栏目及文章
+        $this->catArticel();
+
+        $this->display("Index:about_us");
+    }
+    //产业格局
+    public function industrial(){
+        //取所有子栏目及文章
+        $this->catArticel();
+
+        $this->display("Index:industrial_pattern");
+    }
+    //可持续发展
+    public function develop(){
+        //取所有子栏目及文章
+        $this->catArticel();
+
+        $this->display("Index:sustainable_development");
+    }
+    //加入我们
+    public function join(){
+        //取所有子栏目及文章
+        $this->catArticel();
+
+        $this->display("Index:join_us");
+    }
+    //活动与咨询列表
+    public function activity(){
+        $catid = I('catid');
+        //取主栏目数据
+        $catData = M('category')->where(array('catid'=>$catid))->field('*')->find();
+        //活动列表数据
+        $count = M('article')->where(array('catid'=>$catid))->count();
+        //分页
+        $Page = $this->page($count, 3,I('page',1));
+        $list = M('article')->where(array('catid'=>$catid))->order('listorder desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+
+        $this->assign('catData',$catData);
+        $this->assign('list',$list);
+//        $this->assign('page',$show);
+        $this->assign("page", $Page->show());
+        $this->display("Index:activities_information");
+    }
+    //活动与咨询详情
+    public function activity_detail(){
+        $article_id = I('id');
+        $catid = I('catid');
+
+        //取主栏目数据
+        $catData = M('category')->where(array('catid'=>$catid))->field('*')->find();
+        //活动详情数据
+        $detail = M('article')->alias('article')->where(array('article.id'=>$article_id))->join('inner join __ARTICLE_DATA__ on article.id = __ARTICLE_DATA__.id')->find();
+
+        $this->assign('catData',$catData);
+        $this->assign('detail',$detail);
+        $this->display("Index:activities_information_detail");
+    }
+    //新闻中心
+    public function news_center(){
+        $count = M('video')->where(array('deleted'=>0))->count();
+        $Page = $Page = $this->page($count, 2,I('page',1));
+        $video = M('video')->where(array('deleted'=>0))->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+        //轮播图
+        $ad = M('position')->where(array('deleted'=>0))->order('posid desc')->select();
+
+        $this->assign('video',$video);
+        $this->assign('ad',$ad);
+        $this->assign('page',$Page->show());
+        $this->display('Index:news_center');
+    }
+
+    /**
+     * 得到主栏目下的所有子栏目及子栏目下的一篇文章
+     * @author dengzs @date 2018/10/11 9:59
+     */
+    public function catArticel(){
         $catid = I('catid');
         //取主栏目数据
         $catData = M('category')->where(array('catid'=>$catid))->field('*')->find();
@@ -64,14 +143,11 @@ class IndexController extends Base {
         //取所有子栏目
         foreach ($child_ids as $k=>$v){
             $child[$k] = M('category')->where(array('catid'=>$v))->find();
-            $child_article[$k] = M('article')->where(array('catid'=>$v))->join('left join __ARTICLE_DATA__ on __ARTICLE__.id = __ARTICLE_DATA__.id')->order('listorder asc')->find();
+            $child[$k]['article'] = M('article')->where(array('catid'=>$v))->join('left join __ARTICLE_DATA__ on __ARTICLE__.id = __ARTICLE_DATA__.id')->order('listorder desc')->find();
         }
-
 
         $this->assign('catData',$catData);
         $this->assign('child',$child);
-        $this->assign('child_article',$child_article);
-        $this->display("Index:about_us");
     }
 
 	//列表

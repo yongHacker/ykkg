@@ -67,7 +67,8 @@ class Page {
      */
     function __construct($Total_Size = 1, $Page_Size = 20, $Current_Page = 1, $List_Page = 6, $PageParam = 'page', $pageRule = '', $static = FALSE, $static_size = 0) {
         //默认模板配置
-        $this->Page_tpl['default'] = array('Tpl' => C("PAGE_TEMPLATE") ? C("PAGE_TEMPLATE") : '<span class="all">共有{recordcount}条信息</span><span class="pageindex">{pageindex}/{pagecount}</span>{first}{prev}{liststart}{list}{listend}{next}{last}', 'Config' => array());
+        //$this->Page_tpl['default'] = array('Tpl' => C("PAGE_TEMPLATE") ? C("PAGE_TEMPLATE") : '<span class="all">共有{recordcount}条信息</span><span class="pageindex">{pageindex}/{pagecount}</span>{first}{prev}{liststart}{list}{listend}{next}{last}', 'Config' => array());
+        $this->Page_tpl['default'] = array('Tpl' => C("PAGE_TEMPLATE") ? C("PAGE_TEMPLATE") : '<span class="all">yi共有{recordcount}条信息</span><span class="pageindex">{pageindex}/{pagecount}</span>{first}{prev}{liststart}{list}{listend}{next}{last}', 'Config' => array());
         //每页显示信息数量
         $this->Page_size = (int) $Page_Size;
         //信息总数
@@ -159,12 +160,12 @@ class Page {
             'listlong' => $this->List_Page, //每次显示几个分页导航链接
             'listsidelong' => 2, //分页链接列表首尾导航页码数量，默认为2，html 参数中有”{liststart}”或”{listend}”时才有效
             'list' => '*', //分页链接列表
-            'currentclass' => 'current', //当前页码的CSS样式名称，默认为”current”
+            'currentclass' => 'active', //当前页码的CSS样式名称，默认为”current”
             'link' => $this->urlParameters($_GET), //自定义页码链接，用*代表页码，用于静态页面分页或Ajax分页
-            'first' => '&laquo;', //第一页链接的HTML代码，默认为 ”«”，即显示为 «
-            'prev' => '&#8249;', //上一页链接的HTML代码，默认为”‹”,即显示为 ‹
-            'next' => '&#8250;', //下一页链接的HTML代码，默认为”›”,即显示为 ›
-            'last' => '&raquo;', //最后一页链接的HTML代码，默认为”»”,即显示为 »
+            'first' => '首页', //第一页链接的HTML代码，默认为 ”«”，即显示为 «
+            'prev' => '上一页', //上一页链接的HTML代码，默认为”‹”,即显示为 ‹
+            'next' => '下一页', //下一页链接的HTML代码，默认为”›”,即显示为 ›
+            'last' => '尾页', //最后一页链接的HTML代码，默认为”»”,即显示为 »
             'more' => '...', //被省略的页码链接显示为，默认为”…”
             'disabledclass' => 'disabled', //当处于首尾页时不可用链接的CSS样式名称，默认为”disabled”
             'jump' => '', //页面跳转方式，默认为”input”文本框，可设置为”select”下拉菜单

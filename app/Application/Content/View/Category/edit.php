@@ -79,7 +79,7 @@
               <if condition="$data['child'] eq 0">
                   <tr>
                       <th>栏目图标：</th>
-                      <td><Form function="images" parameter="info[icon],image,$data['image'],content"/><span class="gray"> 双击可以查看图片！</span></td>
+                      <td><Form function="images" parameter="info[icon],image_icon,$data['icon'],content"/><span class="gray"> 双击可以查看图片！</span></td>
                   </tr>
               </if>
             <tr>

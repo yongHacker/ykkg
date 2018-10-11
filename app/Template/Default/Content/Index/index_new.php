@@ -19,7 +19,7 @@
         <!-- 轮播图片 -->
         <div class="carousel-inner">
             <volist name="ad" id="vo" offset="0" length='3'>
-                <div class="carousel-item active">
+                <div class="carousel-item">
                     <img src="{$vo.image}"  style="background:#FFFFFF center 0 no-repeat;">
                 </div>
             </volist>
@@ -50,7 +50,7 @@
 <!--                                <p class="zh">公司注册资金1.12亿元，集团业务涵盖纯金制品专属加工、销售、租赁、回购、贵金属T+D、公募基金、私募基金等众多领域，是中国黄金协会理事单位、上海黄金交易所协作单位、浙江省优秀金融企业、中国黄金交易客户满意最佳典范品牌企业。-->
 <!--                            </p>-->
                             {$about.content}
-                            <button class="btn btn-link" type="button" onclick="window.location.href='./news_center.php'">LEARN MORE 了解详情></button>
+                            <button class="btn btn-link" type="button" onclick="window.location.href='{:U('Index/intoYK',array('catid'=>13))}'">LEARN MORE 了解详情></button>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -70,13 +70,17 @@
         <div class="container clearfix">
             <div class="news-img-box">
                 <div class="row">
-                    <div class="col-md-6"><a href="#"><img src="../public/img/1.jpg" alt=""></a></div>
-                    <div class="col-md-6"><a href="#"><img src="../public/img/1.jpg" alt=""></a></div>
-                    <div class="col-md-6"><a href="#"><img src="../public/img/1.jpg" alt=""></a></div>
-                    <div class="col-md-6"><a href="#"><img src="../public/img/1.jpg" alt=""></a></div>
+                    <volist name="video" id="vo">
+                        <div class="col-md-6">
+                            <a href="javascript:void(0)">
+                             <?php echo htmlspecialchars_decode($vo['url']) ?>
+                                <!--要弄一个遮罩层，图片要覆盖在视频上方-->
+                            <!--<img src="{$vo.img}" alt="{$vo.title_zh}">--></a>
+                        </div>
+                    </volist>
                 </div>
             </div>
-            <button class="btn btn-link" type="button" onclick="window.location.href='./news_center.php'">MORE 更多 ></button>
+            <button class="btn btn-link" type="button" onclick="window.location.href='{:U('Index/news_center')}'">MORE 更多 ></button>
         </div>
     </div>
     <!-- partner -->
@@ -89,22 +93,23 @@
             <h3 class="en">Yongkun has established good strategic cooperative relations with Shanghai Mint Co., Ltd., Bank of China, Industrial and Commercial Bank of China, China Ping An, China People's Insurance and other well-known financial institutions to promote the development of the financial system</h3>
             <h3 class="zh">永坤先后与上海造币有限公司、中国银行、中国工商银行、中国平安、中国人民保险等知名金融机构建立良好战略合作关系，共促金融体系发展。</h3>
             <div class="partner-img-box">
+               <!-- 把每个合作伙伴logo放上去，并加跳转链接（百度搜）-->
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-2"><a href="#"><img src="../public/img/logo.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-md-2"><a href="#"><img src="../public/img/logo.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-md-2"><a href="#"><img src="../public/img/logo.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-md-2"><a href="#"><img src="../public/img/logo.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-md-2"><a href="#"><img src="../public/img/logo.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-md-2"><a href="#"><img src="../public/img/logo.png" alt="" class="img-fluid"></a></div>
+                        <div class="col-md-2"><a href="#"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" class="img-fluid"></a></div>
+                        <div class="col-md-2"><a href="#"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" class="img-fluid"></a></div>
+                        <div class="col-md-2"><a href="#"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" class="img-fluid"></a></div>
+                        <div class="col-md-2"><a href="#"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" class="img-fluid"></a></div>
+                        <div class="col-md-2"><a href="#"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" class="img-fluid"></a></div>
+                        <div class="col-md-2"><a href="#"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" class="img-fluid"></a></div>
                     </div>
                     <div class="row">
-                        <div class="col-md-2"><a href="#"><img src="../public/img/logo.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-md-2"><a href="#"><img src="../public/img/logo.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-md-2"><a href="#"><img src="../public/img/logo.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-md-2"><a href="#"><img src="../public/img/logo.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-md-2"><a href="#"><img src="../public/img/logo.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-md-2"><a href="#"><img src="../public/img/logo.png" alt="" class="img-fluid"></a></div>
+                        <div class="col-md-2"><a href="#"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" class="img-fluid"></a></div>
+                        <div class="col-md-2"><a href="#"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" class="img-fluid"></a></div>
+                        <div class="col-md-2"><a href="#"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" class="img-fluid"></a></div>
+                        <div class="col-md-2"><a href="#"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" class="img-fluid"></a></div>
+                        <div class="col-md-2"><a href="#"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" class="img-fluid"></a></div>
+                        <div class="col-md-2"><a href="#"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" class="img-fluid"></a></div>
                     </div>
                 </div>
             </div>
@@ -112,4 +117,8 @@
     </div>
     <template file="Content/footer_new.php"/>
 </body>
+<script>
+    //轮播图
+    $('.carousel-inner .carousel-item:first').addClass('active');
+</script>
 </html>

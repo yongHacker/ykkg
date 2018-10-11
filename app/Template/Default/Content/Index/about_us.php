@@ -21,7 +21,7 @@
                 <ul class="nav flex-column" role="tablist">
                     <volist name="child" id="vo">
                         <li class="nav-item">
-                            <a data-id="{$vo.catid}" href="#profile" class="nav-link" data-toggle="tab">
+                            <a href="#{$vo.catid}" class="nav-link" data-toggle="tab">
                                 <img src="{$vo.icon}" width="35" height="30" alt="">
                                 <div class="option-text">
                                     <p class="en">{$vo.catdir}</p>
@@ -33,12 +33,12 @@
                 </ul>
             </div>
             <div class="col-7 tab-content" id="tabContent">
-                <div class="tab-pane fade in show active" id="profile">
-                   <volist name="child_article" id="vo">
+                <volist name="child" id="vo">
+                <div class="tab-pane fade in show" id="{$vo['catid']}">
                    <div class="img-box">
-                        <img src="{$vo.thumb}" alt="">
+                        <img src="{$vo['article']['thumb']}" alt="">
                    </div>
-                       {$vo.content}
+                    {$vo['article']['content']}
                 </div>
                 </volist>
      <!--           <div class="tab-pane fade" id="speech">speech</div>
@@ -57,9 +57,10 @@
         $('.banner-img').css('background-image','url('+$image+')');
 
         $('.nav li:first').addClass('active');
+        $('#tabContent .tab-pane:first').addClass('active');
 
         //ajax请求后台显示文章
-        $(function () {
+        /*$(function () {
             var catid = $('.nav li:first a').attr('data-id');
             $.ajax({
                 type:'post',
@@ -72,8 +73,7 @@
                     console.log(res.data);
                 }
             })
-        });
-
+        });*/
 
     </script>
 </body>
