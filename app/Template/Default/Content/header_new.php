@@ -19,7 +19,7 @@
 
 <body>
     <header>
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: lightblue;opacity: 0.4 ">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light">
         <div class="container">
            <a href="#" class="navbar-brand" id="brand"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" ></a>
            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="aria-label">
@@ -36,7 +36,7 @@
                    </li>
                    </volist>
                </ul>
-               <a href="javascript:;" class="navbar-brand hidden-md-down" id="Tel"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt=""></a>
+               <a href="javascript:;" class="navbar-brand hidden-md-down" id="Tel"><img src="{$config_siteurl}statics/default/ykkg/img/small/phone.png" alt=""><span>400-8819-958</span></a>
            </div> 
         </div>
     </nav>

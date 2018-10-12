@@ -7,13 +7,13 @@
 </head>
 <body>
     <div class="banner-img">
-<!--        这不是一张背景图吗？怎么会有中英文标题-->
-        <div class=" container">
+<!--        这不是一张背景图吗？怎么会有中英文标题,文字利于搜索，图片省事-->
+        <!-- <div class=" container">
             <div class="banner-img-title">
                 <h1 class="en">{$catData.catdir}</h1>
                 <h1 class="zh">{$catData.catname}</h1>
             </div>
-        </div>
+        </div> -->
     </div>
     <div class="content container-fluid">
         <div class="row">

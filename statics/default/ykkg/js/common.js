@@ -22,6 +22,22 @@ $(function(){
     $(".col-5>.flex-column").on('click', 'li', function(event) {
     event.preventDefault();
     $(this).addClass('active').siblings().removeClass('active');
-    });    
+    });  
+
+  // 顶部导航栏透明度切换颜色切换
+  var $body=$("body");
+  $(window).on('scroll', function(event) {
+      event.preventDefault();
+      clearTimeout(timer);
+      var timer=setTimeout(function (event){
+        var top=$(document).scrollTop();
+        if(Math.abs(top)>50){
+            $body.addClass('intransparent');
+        }else{
+            if($body.hasClass('intransparent'))
+                $body.removeClass('intransparent');
+        }
+      },50);
+  });    
 })
 

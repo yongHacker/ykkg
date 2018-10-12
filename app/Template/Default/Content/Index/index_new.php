@@ -14,13 +14,13 @@
         <ul class="carousel-indicators">
             <li data-target="#banner-slider" data-slide-to="0" class="active"></li>
             <li data-target="#banner-slider" data-slide-to="1"></li>
-            <li data-target="#banner-slider" data-slide-to="2"></li>
+            <li data-target="#banner-slid er" data-slide-to="2"></li>
         </ul>
         <!-- 轮播图片 -->
         <div class="carousel-inner">
             <volist name="ad" id="vo" offset="0" length='3'>
                 <div class="carousel-item">
-                    <img src="{$vo.image}"  style="background:#FFFFFF center 0 no-repeat;">
+                    <img src="{$vo.image}" >
                 </div>
             </volist>
         </div>
@@ -29,6 +29,10 @@
             <span class="carousel-control-prev-icon"></span>
         </a>
         <a href="#banner-slider" class="carousel-control-next" data-slide="next" aria-hidden="true"><span class="carousel-control-next-icon"></span></a>
+        <!-- 轮播图中间的文字图片 -->
+        <div class="carousel-text">
+            <img src="{$config_siteurl}statics/default/ykkg/img/carousel/carousel_text.png" alt="" width="899" height="279" class="img-fluid">
+        </div>
     </div>
     <!-- about us -->
     <div class="about-us">
@@ -71,11 +75,14 @@
             <div class="news-img-box">
                 <div class="row">
                     <volist name="video" id="vo">
-                        <div class="col-md-6">
-                            <a href="javascript:void(0)">
-                             <?php echo htmlspecialchars_decode($vo['url']) ?>
-                                <!--要弄一个遮罩层，图片要覆盖在视频上方-->
-                            <!--<img src="{$vo.img}" alt="{$vo.title_zh}">--></a>
+                        <div class="col-md-6 ">
+                            <div class="embed-responsive">
+                               <!-- <iframe src="http://open.iqiyi.com/developer/player_js/coopPlayerIndex.html?vid=a6175599346e1a3e5c9aaf49b9beab86&tvId=1055891000&accessToken=2.f22860a2479ad60d8da7697274de9346&appKey=3955c3425820435e86d0f4cdfe56f5e7&appId=1368&height=100%&width=100%" frameborder="0" allowfullscreen="true" width="100%" height="100%"></iframe> -->
+                               <!-- <iframe height=498 width=510 src='http://player.youku.com/embed/XMzY4MjIwODA5Mg==' frameborder=0 'allowfullscreen'='true'></iframe> -->
+                               <!-- <embed src="http://player.video.iqiyi.com/a6175599346e1a3e5c9aaf49b9beab86/0/0/v_19rrdhhkyc.swf-albumId=1055891000-tvId=1055891000-isPurchase=0-cnId=25" allowFullScreen="true" quality="high" width="480" height="350" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed> -->
+                                <?php echo htmlspecialchars_decode($vo['url']) ?>
+                                    <!-- 为兼容移动端视频可播放，故放入ifream，样式未能修改 -->
+                            </div>
                         </div>
                     </volist>
                 </div>
@@ -96,20 +103,20 @@
                <!-- 把每个合作伙伴logo放上去，并加跳转链接（百度搜）-->
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-2"><a href="#"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-md-2"><a href="#"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-md-2"><a href="#"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-md-2"><a href="#"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-md-2"><a href="#"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-md-2"><a href="#"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" class="img-fluid"></a></div>
+                        <div class="col-md-2"><a href="http://www.boc.cn/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/1.png" alt="" class="img-fluid"></a></div>
+                        <div class="col-md-2"><a href="http://www.picc.com/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/2.png" alt="" class="img-fluid"></a></div>
+                        <div class="col-md-2"><a href="http://www.cgbchina.com.cn/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/3.png" alt="" class="img-fluid"></a></div>
+                        <div class="col-md-2"><a href="http://www.spdb.com.cn/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/4.png" alt="" class="img-fluid"></a></div>
+                        <div class="col-md-2"><a href="http://shzb.cbpm.cn/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/5.png" alt="" class="img-fluid"></a></div>
+                        <div class="col-md-2"><a href="http://www.icbc.com.cn/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/6.png" alt="" class="img-fluid"></a></div>
                     </div>
                     <div class="row">
-                        <div class="col-md-2"><a href="#"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-md-2"><a href="#"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-md-2"><a href="#"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-md-2"><a href="#"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-md-2"><a href="#"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-md-2"><a href="#"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" class="img-fluid"></a></div>
+                        <div class="col-md-2"><a href="http://www.cmbc.com.cn/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/7.png" alt="" class="img-fluid"></a></div>
+                        <div class="col-md-2"><a href="http://www.abchina.com/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/8.png" alt="" class="img-fluid"></a></div>
+                        <div class="col-md-2"><a href="https://www.pingan.com/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/9.png" alt="" class="img-fluid"></a></div>
+                        <div class="col-md-2"><a href="https://www.chinalife.com.cn/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/10.png" alt="" class="img-fluid"></a></div>
+                        <div class="col-md-2"><a href="http://www.chinapost.com.cn/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/11.png" alt="" class="img-fluid"></a></div>
+                        <div class="col-md-2"><a href="http://www.citicbank.com/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/12.png" alt="" class="img-fluid"></a></div>
                     </div>
                 </div>
             </div>
