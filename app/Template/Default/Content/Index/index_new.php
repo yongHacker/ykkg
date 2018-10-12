@@ -127,5 +127,6 @@
 <script>
     //轮播图
     $('.carousel-inner .carousel-item:first').addClass('active');
+
 </script>
 </html>

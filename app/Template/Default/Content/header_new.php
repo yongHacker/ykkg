@@ -28,7 +28,7 @@
            <div class="collapse navbar-collapse" id="navbarContent">
                <ul class="navbar-nav">
                    <volist name="category" id="vo">
-                   <li class="nav-item active">
+                   <li class="nav-item" id="catid{$vo.catid}">
                        <a href="{$vo.url}&catid={$vo.catid}" class="nav-link">
                            <p class="en">{$vo.catdir}</p>
                            <p class="zh">{$vo.catname}</p>
@@ -47,7 +47,19 @@
     <script src="{$config_siteurl}statics/default/ykkg/lib/bootstrap/bootstrap.js"></script>
     <script src="{$config_siteurl}statics/default/ykkg/js/header.js"></script>
     <script src="{$config_siteurl}statics/default/ykkg/js/common.js"></script>
-
+    <script>
+        //截取地址栏中url的参数值
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null)
+                return unescape(r[2]);
+            return null;
+        }
+        // 导航栏变色
+        var catid = getQueryString("catid");
+        $('#catid'+catid+'').addClass('active');
+    </script>
 </body>
 
 </html>
