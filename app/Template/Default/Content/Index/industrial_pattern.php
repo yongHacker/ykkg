@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <title>产业格局</title>
+    <link rel="stylesheet" href="{$config_siteurl}statics/default/ykkg/css/industrial_pattern.css">
 </head>
 <body>
     <div class="banner-img">
         <div class=" container">
-            <div class="banner-img-title">
+            <!-- <div class="banner-img-title">
                 <h1 class="en">{$catData.catdir}</h1>
                 <h1 class="zh">{$catData.catname}</h1>
-            </div>
+            </div> -->
         </div>
     </div>
     <div class="content container-fluid">
@@ -34,6 +35,9 @@
             <div class="col-7 tab-content" id="tabContent">
                 <volist name="child" id="vo">
                     <div class="tab-pane fade in show" id="{$vo['catid']}">
+                        <div class="logo-box">
+                            <img src="{$config_siteurl}statics/default/ykkg/img/content/logo.png" alt="">
+                        </div>
                         <div class="img-box">
                             <img src="{$vo['article']['thumb']}" alt="">
                         </div>

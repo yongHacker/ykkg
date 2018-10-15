@@ -46,7 +46,7 @@
 
 .intro{
   width:39rem;
-  margin-top: 3rem;
+  margin: 3rem auto 0;
 }
 .about-us{
   background-color:#f7f7f7;
@@ -80,15 +80,16 @@
 .row{
   /* margin:0; */
 }
+
 /*news  */
 .news-img-box img{
   width:44.3rem;
   height:25.6rem;
 }
-.news-img-box .row .col-md-6{
+.news-img-box .row .col-lg-6{
   margin-bottom:1.25rem;
 }
-.news-img-box .row .col-md-6 .embed-responsive{
+.news-img-box .row .col-lg-6 .embed-responsive{
   height:  25.6rem;
 }
 /*partner*/

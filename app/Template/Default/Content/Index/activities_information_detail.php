@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <title>活动详情</title>
-    <link rel="stylesheet" href="../public/css/activities_information_detail.css">
+    <link rel="stylesheet" href="{$config_siteurl}statics/default/ykkg/css/activities_information_detail.css">
 </head>
 <body>
     <div class="banner-img">
         <div class=" container">
-            <div class="banner-img-title">
+           <!--  <div class="banner-img-title">
                 <h1 class="en">{$catData.catdir}</h1>
                 <h1 class="zh">{$catData.catname}</h1>
-            </div>
+            </div> -->
         </div>
     </div>
     <div class="container act-detail">
