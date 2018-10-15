@@ -51,7 +51,7 @@
                 </div>
             </volist>
         </div>
-        <!--<div class="pagination-box">
+        <div class="pagination-box">
             <ul class="pagination">
                 <li class="page-item"><a href="" class="page-link">首页</a></li>
                 <li class="page-item"><a href="" class="page-link">上一页</a></li>
@@ -60,7 +60,7 @@
                 <li class="page-item"><a href="" class="page-link">下一页</a></li>
                 <li class="page-item"><a href="" class="page-link">尾页</a></li>
             </ul>
-        </div>-->
+        </div>
     </div>
     <!--分页-->
     {$page}

@@ -1,20 +1,22 @@
 $(function(){
-// 导航栏中的里点击切换active
+// 导航栏中的里点击切换active,截取地址栏中url的catid做为判断
     var $li=$("#navbarContent .navbar-nav li");
-    var url=location.pathname;
-    var mod_url=url.slice(url.lastIndexOf("/")+1,url.lastIndexOf("."));
+    function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null)
+                return unescape(r[2]);
+            return null;
+        }
     $li.each(function() {
-        // 截取导航栏中的url
-            var src=$(this).find('a').attr('href');
-            var mod_src=src.slice(src.lastIndexOf("/")+1,src.lastIndexOf("."));
-            var num=mod_url.indexOf(mod_src);
-            // 判断导航栏中的字符串是否为地址栏中字符的子串，且从第一位开始匹配
-            if(num==0){
+            var catid=$(this).attr('id').replace('catid','');
+            var url_catid=getQueryString("catid");
+            if(catid==url_catid){
                 $(this).addClass('active').siblings().removeClass('active');
                 return false;
             }else{
                 //其余默认为首页
-                $(this).prev().addClass('active').siblings().removeClass('active');
+                $li.first().addClass('active');
             }
     });
 
