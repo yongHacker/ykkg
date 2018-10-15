@@ -273,7 +273,7 @@ class Page {
         }
 
         //当前页码大于1表示存在上一页/首页
-        if ($cfg['pageindex'] > 1) {
+
             //第一页链接的HTML代码
             if ($this->Static) {
                 $pFirst = '<a href="' . $this->pageRule['index'] . '">' . $cfg['first'] . '</a>';
@@ -282,20 +282,20 @@ class Page {
             }
             //显示上一页HTML代码
             //如果生成静态，且上一页为首页时
-            if ($this->Static && ($cfg['pageindex'] - 1) == 1) {
+
                 $pPrev = '<a href="' . $this->pageRule['index'] . '">' . $cfg ['prev'] . '</a> '; //显示首页
-            } else {
+
                 //显示上一页
                 if ($this->Static_Size && $cfg['pageindex'] - 1 <= $this->Static_Size) {
                     $pPrev = '<a href="' . str_replace('*', $cfg['pageindex'] - 1, $this->urlParameters($_GET)) . '">' . $cfg['prev'] . '</a>';
                 } else {
                     $pPrev = '<a href="' . str_replace('*', $cfg['pageindex'] - 1, $cfg['link']) . '">' . $cfg['prev'] . '</a>';
                 }
-            }
-        }
+
+
 
         //下一页，尾页
-        if ($cfg ['pageindex'] < $cfg ['pagecount']) {
+
             //最后一页
             $pLast = '<a href="' . str_replace('*', $cfg['pagecount'], $cfg['link']) . '">' . $cfg['last'] . '</a>';
             //下一页
@@ -305,7 +305,7 @@ class Page {
             } else {
                 $pNext = '<a href="' . str_replace('*', $cfg['pageindex'] + 1, $cfg['link']) . '">' . $cfg['next'] . '</a>';
             }
-        }
+
 
         //快捷跳转方式
         switch (strtolower($cfg['jump'])) {
