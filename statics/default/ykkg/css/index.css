@@ -1,7 +1,8 @@
-#banner-slider img{
+#banner-slider .carousel-inner img{
     height: 56rem;
-    max-width: 100%;
-    background-size: cover;
+    width: 100%;
+    background-size: contain;
+    background-position: center center;
 }
 .carousel-indicators li{
     width:  1rem;
@@ -36,10 +37,16 @@
     background-color:#C01920;
     border:2px solid #C01920;
 }
+.carousel-text{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
 
 .intro{
   width:39rem;
-  margin-top: 3rem;
+  margin: 3rem auto 0;
 }
 .about-us{
   background-color:#f7f7f7;
@@ -73,13 +80,17 @@
 .row{
   /* margin:0; */
 }
+
 /*news  */
 .news-img-box img{
   width:44.3rem;
   height:25.6rem;
 }
-.news-img-box .row .col-md-6{
+.news-img-box .row .col-lg-6{
   margin-bottom:1.25rem;
+}
+.news-img-box .row .col-lg-6 .embed-responsive{
+  height:  25.6rem;
 }
 /*partner*/
 .partner{

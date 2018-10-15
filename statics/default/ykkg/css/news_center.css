@@ -1,6 +1,6 @@
 #banner-slider img{
     height: 56rem;
-    max-width: 100%;
+    width: 100%;
     background-size: cover;
 }
 .carousel-indicators li{

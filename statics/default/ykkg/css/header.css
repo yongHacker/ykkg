@@ -1,6 +1,13 @@
 .navbar{
     min-height: 6rem;
     padding:0;
+    opacity: 0.4;
+    background-color: #fff;
+    transition: 0.2s ease;
+}
+body.intransparent .navbar{
+  opacity:1;
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
 }
 .navbar-brand{
   padding:0;
@@ -13,8 +20,9 @@
   margin-left: 5rem;
 }
 #Tel img{
-  width:9rem;
-  height:2rem;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
 }
 .nav-link{
   padding: 0 !important;
@@ -38,6 +46,12 @@
 }
 #Tel{
     margin-left: 1rem;
+}
+a#Tel span{
+  font-size:1.87rem;
+  font-weight:400;
+  color:#525252;
+  vertical-align: middle;
 }
 .navbar-light .navbar-nav .active > .nav-link{
   color:#E60012;

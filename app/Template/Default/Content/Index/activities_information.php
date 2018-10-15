@@ -9,10 +9,10 @@
 <body>
     <div class="banner-img">
         <div class=" container">
-            <div class="banner-img-title">
+            <!-- <div class="banner-img-title">
                 <h1 class="en">{$catData.catdir}</h1>
                 <h1 class="zh">{$catData.catname}</h1>
-            </div>
+            </div> -->
         </div>
     </div>
     <div class="container act">
