@@ -97,7 +97,6 @@ class IndexController extends Base {
 
         $this->assign('catData',$catData);
         $this->assign('list',$list);
-//        $this->assign('page',$show);
         $this->assign("page", $Page->show());
         $this->display("Index:activities_information");
     }
@@ -118,14 +117,15 @@ class IndexController extends Base {
     //新闻中心
     public function news_center(){
         $count = M('video')->where(array('deleted'=>0))->count();
-        $Page = $Page = $this->page($count, 2,I('page',1));
-        $video = M('video')->where(array('deleted'=>0))->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+//        $Page = $Page = $this->page($count, 2,I('page',1));
+//        $video = M('video')->where(array('deleted'=>0))->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
         //轮播图
         $ad = M('position')->where(array('deleted'=>0))->order('posid desc')->select();
 
-        $this->assign('video',$video);
+//        $this->assign('video',$video);
         $this->assign('ad',$ad);
-        $this->assign('page',$Page->show());
+        $this->assign('count',$count);
+//        $this->assign('page',$Page->show());
         $this->display('Index:news_center');
     }
 
@@ -150,7 +150,45 @@ class IndexController extends Base {
         $this->assign('child',$child);
     }
 
-	//列表
+    //ajax请求视频
+    public function ajax_video(){
+        $current = I('current') ? I('current')-1 : 0;
+        $pageSize = I('pageSize');
+        if (isset($current) && $pageSize){
+            $limit = $current.','.$pageSize;
+            $video = M('video')->where(array('deleted'=>0))->order('id desc')->limit($limit)->select();
+            if ($video){
+                $this->ajaxReturn(array('status'=>1,'msg'=>'请求成功','data'=>$video),'json',320);
+            }else{
+                $this->ajaxReturn(array('status'=>0,'msg'=>'网络繁忙'),'json',320);
+            }
+        }else{
+            $this->ajaxReturn(array('status'=>-1,'msg'=>'请传入当前页和请求条数'),'json',320);
+        }
+
+    }
+
+    //ajax动态请求文章
+    public function ajax_article(){
+        $current = I('current') ? I('current')-1 : 0;
+        $pageSize = I('pageSize');
+        if (isset($current) && $pageSize){
+            $limit = $current.','.$pageSize;
+            $video = M('video')->where(array('deleted'=>0))->order('id desc')->limit($limit)->select();
+            echo M()->getLastSql();
+            if ($video){
+                $this->ajaxReturn(array('status'=>1,'msg'=>'请求成功','data'=>$video),'json',320);
+            }else{
+                $this->ajaxReturn(array('status'=>0,'msg'=>'网络繁忙'),'json',320);
+            }
+        }else{
+            $this->ajaxReturn(array('status'=>-1,'msg'=>'请传入当前页和请求条数'),'json',320);
+        }
+
+    }
+
+
+    //列表
 	public function lists() {
 		//栏目ID
 		$catid = I('get.catid', 0, 'intval');
@@ -395,20 +433,5 @@ class IndexController extends Base {
 		$this->assign($info);
 		$this->display("Tags/tag");
 	}
-
-	//ajax动态请求文章
-	public function ajax_article(){
-        $catid = I('catid');
-        if ($catid){
-            $p = empty(I('page')) ? 0 : I('page')-1;
-            $count = M('article')->where(array('catid'=>$catid))->join('left join __ARTICLE_DATA__ on __ARTICLE__.id = __ARTICLE_DATA__.id')->count();
-            //分页
-            $page = $this->page($count,1,I('page'));
-            $limit = "$p,1";
-            $articles = M('article')->where(array('catid'=>$catid))->join('left join __ARTICLE_DATA__ on __ARTICLE__.id = __ARTICLE_DATA__.id')->limit($limit)->order('listorder asc')->select();
-            $this->ajaxReturn(array('status'=>1,'data'=>$articles,'page'=>$page));
-        }
-
-    }
 
 }

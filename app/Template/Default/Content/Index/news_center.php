@@ -63,6 +63,7 @@
                 <li class="page-item"><a href="" class="page-link">尾页</a></li>
             </ul> -->
         </div>
+        <input type="hidden" name="count" id="count" value="{$count}">
     </div>
     <!--分页-->
     <!-- {$page} -->
