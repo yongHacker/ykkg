@@ -44,35 +44,42 @@
         <div class="row">
             <volist name="video" id="vo">
                 <!--要弄一个遮罩层，图片要覆盖在视频上方-->
-                <div class="col-lg-6 col-md-12">
-                    <!--<video src="" controls="true" poster="{$vo.img}" preload="auto"> 抱歉，您的浏览器不支持内嵌视频</video>-->
-                    <?php echo htmlspecialchars_decode($vo['url']) ?>
+                <div class="col-lg-6 col-md-12 text-center">
+                    <div class="embed-responsive">
+                        <!--<video src="" controls="true" poster="{$vo.img}" preload="auto"> 抱歉，您的浏览器不支持内嵌视频</video>-->
+                        <?php echo htmlspecialchars_decode($vo['url']) ?>
+                    </div>
                     <h3>{$vo.title_zh}</h3>
                 </div>
             </volist>
         </div>
         <div class="pagination-box">
-            <ul class="pagination">
+           <!--  <ul class="pagination">
                 <li class="page-item"><a href="" class="page-link">首页</a></li>
                 <li class="page-item"><a href="" class="page-link">上一页</a></li>
                 <li class="page-item active"><a href="" class="page-link">1</a></li>
-                <li class="page-item"><a href="" class="page-link">2</a></li>
+                <li class="page-item" data-type="1"><a href="" class="page-link">2</a></li>
                 <li class="page-item"><a href="" class="page-link">下一页</a></li>
                 <li class="page-item"><a href="" class="page-link">尾页</a></li>
-            </ul>
+            </ul> -->
         </div>
     </div>
     <!--分页-->
-    {$page}
+    <!-- {$page} -->
     <template file="Content/footer_new.php"/>
 </body>
+<script src="{$config_siteurl}statics/default/ykkg/js/news_center.js"></script>
+<script src="{$config_siteurl}statics/default/ykkg/js/pagination.js"></script>
 <script>
     //轮播图
     $('.carousel-inner .carousel-item:first').addClass('active');
     //隐藏部分分页信息
     $('.all').hide();
     $('.pageindex').hide();
+    $(".pagination-box").pagination({
+        total:10,
+        pageSize:6,
+        
+    })
 </script>
 </html>
-<script src="{$config_siteurl}statics/default/ykkg/js/news_center.js"></script>
-<!-- <script src="../public/js/pagination.js"></script> -->

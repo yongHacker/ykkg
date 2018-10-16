@@ -60,6 +60,9 @@
     margin: 1.25rem 0  2.56rem 0;
     text-align: center;
 }
+.news-center .col-lg-6 .embed-responsive{
+    height:25.6rem;
+}
 .news-center .col-lg-6:nth-child(2n+1){
     padding-right:1.25rem;
     line-height: 0;
@@ -87,12 +90,18 @@
 .page-link:focus{
     box-shadow:none;
 }
+.page-item .page-link{
+    margin:0;
+}
 .page-item.active .page-link{
     border: 1px solid #E60012;
     border-radius:4px;
 }
-.page-item:nth-last-child(2) .page-link,
-.page-item:nth-child(2) .page-link{
-    border:0;
-    width: 3.56rem;
+.page-item{
+    margin-left:1rem;
+    cursor:pointer;
 }
+.page-item.disabled{
+opacity: 0.7;
+color: #000;
+} 
