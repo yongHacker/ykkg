@@ -49,6 +49,10 @@
 .intro{
   width:39rem;
   margin: 3rem auto 0;
+  max-height: 26rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: normal;
 }
 .about-us{
   background-color:#f7f7f7;
@@ -62,25 +66,39 @@
   height:100%;
 }
 .intro h3{
-  color:#C01920;
+  color: #C01920;
   line-height:normal;
-  font-size:1.5rem;
-  font-weight:bold;
+  font-size: 0.88rem;
   text-indent:2rem;
+}
+.intro h3.en{
+  font-family: 'RobotoSlab-Regular';
+}
+.intro h3.zh{
+  font-family: SourceHanSansCN-Bold;
+  margin-top: 1rem;
 }
 .intro p{
   text-indent:2rem;
+  color: #525252;
 }
 .intro p.zh{
   line-height: 1.5rem;
   font-size: 1rem;
+  font-family: 'SourceHanSansCN-Regular';
 }
 .intro p.en{
-  line-height: 1.25rem;
-  font-size: 1rem;
+  font-size: 0.88rem;
+  font-family: 'RobotoSlab-Regular';
+}
+.about-us button{
+  /* margin-top: 3.12rem; */
+  margin-bottom:3.12rem;
+  /* position: absolute; */
+  /* bottom: 0; */
 }
 .row{
-  /* margin:0; */
+  /* margin-top: 1rem; */
 }
 
 /*news  */

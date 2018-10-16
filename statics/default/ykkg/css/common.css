@@ -34,9 +34,11 @@
 .title>h2.en{
   font-size: 1.5rem;
   margin-top: 1.31rem;
+  font-family: RobotoSlab-Bold;
 }
 .title>h2.zh{
   font-size: 1.125rem;
+  font-family: 'SourceHanSansCN-Regular';
 }
 /**/
 .banner-img{
@@ -155,4 +157,52 @@
   font-size:0.88rem;
   color:#525252;
   text-indent:2rem;
+}
+/*字体设置*/
+@font-face{
+  font-family: 'RobotoSlab-Regular';
+   src: url('../font/RobotoSlab-Regular.ttf');
+}
+@font-face{
+  font-family: 'RobotoSlab-Bold';
+   src: url('../font/RobotoSlab-Bold.ttf');
+}
+@font-face{
+  font-family: 'SourceHanSansCN-Bold';
+   src: url('../font/SourceHanSansCN-Bold.otf');
+}
+@font-face{
+  font-family: 'SourceHanSansCN-Regular';
+   src: url('../font/SourceHanSansCN-Regular.otf');
+}
+@font-face{
+  font-family: 'ZpixEX2_EX';
+   src: url('../font/ZpixEX2_EX.ttf');
+}
+@font-face{
+  font-family: 'ZpixEX2_SS';
+   src: url('../font/ZpixEX2_SS.ttf');
+}
+@font-face{
+  font-family: 'BebasNeue';
+   src: url('../font/BebasNeue.otf');
+}
+.en{
+  font-family: 'RobotoSlab-Regular',-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, 'sans-serif', "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.zh{
+  font-family: 'ZpixEX2_EX',-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, 'sans-serif', "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+button{
+  font-family: 'ZpixEX2_EX';
+  font-size: 0.88rem;
+}
+/*重置bootstrap一些样式*/
+p{
+  margin:0;
+  padding:0;
+}
+h1,h2,h3,h4{
+  padding:0;
+  margin:0;
 }

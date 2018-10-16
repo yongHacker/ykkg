@@ -29,8 +29,6 @@ body.intransparent .navbar{
 }
 .nav-item{
     margin-right:1rem;
-    font-size: 1rem;
-    line-height: 2rem;
     font-weight: 400;
 }
 .nav-item:nth-child(n+4){
@@ -43,15 +41,32 @@ body.intransparent .navbar{
     margin:0;
     white-space:  nowrap;
     text-align:center;
+    line-height: 1.5rem;
 }
+.nav-item p.en{
+  font-size:1.12rem;
+}
+.nav-item p.zh{
+  font-size:0.88rem;
+  position:relative;
+}
+/* .nav-item p.zh:after{
+  position: absolute;
+  top: 0;
+  content: '>';
+  transform: rotate(90deg);
+  display: block;
+} */
 #Tel{
     margin-left: 1rem;
 }
 a#Tel span{
-  font-size:1.87rem;
+  font-size: 1.63rem;
   font-weight:400;
   color:#525252;
   vertical-align: middle;
+  font-family: 'BebasNeue';
+  margin-left: 0.3rem;
 }
 .navbar-light .navbar-nav .active > .nav-link{
   color:#E60012;
