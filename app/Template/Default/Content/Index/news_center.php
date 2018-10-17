@@ -42,16 +42,14 @@
     <!-- news_center -->
     <div class="news-center container">
         <div class="row">
-            <volist name="video" id="vo">
-                <!--要弄一个遮罩层，图片要覆盖在视频上方-->
-                <div class="col-lg-6 col-md-12 text-center">
-                    <div class="embed-responsive">
-                        <!--<video src="" controls="true" poster="{$vo.img}" preload="auto"> 抱歉，您的浏览器不支持内嵌视频</video>-->
-                        <?php echo htmlspecialchars_decode($vo['url']) ?>
-                    </div>
-                    <h3>{$vo.title_zh}</h3>
+            <!--要弄一个遮罩层，图片要覆盖在视频上方-->
+            <div class="col-lg-6 col-md-12 text-center">
+                <div class="embed-responsive">
+                    <!--<video src="" controls="true" poster="{$vo.img}" preload="auto"> 抱歉，您的浏览器不支持内嵌视频</video>-->
+                    <!-- <embed src="http://player.video.iqiyi.com/04d4ed8fe6ab306ff2482b4df1d0ea39/0/0/v_19rr65m6jw.swf-albumId=1413828800-tvId=1413828800-isPurchase=0-cnId=25" allowFullScreen='true' quality='high' width='480' height='350' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed> -->
                 </div>
-            </volist>
+                <h3>{$vo.title_zh}</h3>
+            </div>
         </div>
         <div class="pagination-box">
            <!--  <ul class="pagination">
@@ -62,24 +60,33 @@
                 <li class="page-item"><a href="" class="page-link">下一页</a></li>
                 <li class="page-item"><a href="" class="page-link">尾页</a></li>
             </ul> -->
+            {$page}
         </div>
         <input type="hidden" name="count" id="count" value="{$count}">
     </div>
     <!--分页-->
-    <!-- {$page} -->
     <template file="Content/footer_new.php"/>
+
 </body>
 <script src="{$config_siteurl}statics/default/ykkg/js/news_center.js"></script>
-<script src="{$config_siteurl}statics/default/ykkg/js/pagination.js"></script>
+<!-- <script src="{$config_siteurl}statics/default/ykkg/js/pagination.js"></script> -->
 <script>
     //轮播图
     $('.carousel-inner .carousel-item:first').addClass('active');
     //隐藏部分分页信息
     $('.all').hide();
     $('.pageindex').hide();
-    $(".pagination-box").pagination({
-        total:10,
-        pageSize:6,
-    })
+    // 根据返回结果，渲染页面
+    // function ajaxCallback(result){
+    //     console.log(result);
+    // };
+    // $(".pagination-box").pagination({
+    //     total:$("input[name=count]").val(),
+    //     pageSize:6,
+    //     remoteParam:{
+    //         url:"/index.php?a=ajax_video",
+    //         success:ajaxCallback,
+    //     }
+    // })
 </script>
 </html>
