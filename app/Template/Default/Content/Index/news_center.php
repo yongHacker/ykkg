@@ -66,7 +66,7 @@
         <input type="hidden" name="count" id="count" value="{$count}">
     </div>
     <!--分页-->
-    <!-- {$page} -->
+     {$page}
     <template file="Content/footer_new.php"/>
 </body>
 <script src="{$config_siteurl}statics/default/ykkg/js/news_center.js"></script>
