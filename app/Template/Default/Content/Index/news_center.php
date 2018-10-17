@@ -18,7 +18,7 @@
         <div class="carousel-inner">
             <volist name="ad" id="vo" offset="0" length='3'>
                 <div class="carousel-item">
-                    <img src="{$vo.image}"  style="background:#FFFFFF center 0 no-repeat;">
+                    <img src="{$vo.image}">
                 </div>
             </volist>
         </div>
@@ -80,7 +80,6 @@
     $(".pagination-box").pagination({
         total:10,
         pageSize:6,
-        
     })
 </script>
 </html>
