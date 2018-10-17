@@ -1,6 +1,6 @@
 ;(function($,window,document,undefined){
     // 定义Pagination的构造函数
-    var Pagination=function(element,current,total,pageSize,remote){
+    var Pagination=function(element,current,total,pageSize,remoteParam){
         this.$element=element;//当前调用的jQuery对象
         this.current=current;
         this.total=total;
@@ -8,9 +8,9 @@
         this.lastPageIndex=null;
         this.begin=null;
         this.end=null;
-        this.remote={
-            url:remote.url,
-            success:remote.success,
+        this.remoteParam={
+            url:remoteParam.url,
+            success:remoteParam.success,
         }
         this.$firstButton=$('<div class="page-item" data-type="first"></div>');
         this.$lastButton=$('<div class="page-item" data-type="last"></div>');
@@ -147,14 +147,14 @@
             });
         },
         remote:function(){
-            if(typeof this.remote.success==='function'){
+            if(typeof this.remoteParam.success==='function'){
                 this.$page.find('li[data-type='+this.current+']').addClass('active');
-                this.getAjax(this,this.url,this.params,this.success);
+                this.getAjax(this,this.remoteParam.url,this.remoteParam.success);
             }else{
                 throw new Error("remote Error！");
             }
         },
-        getAjax:function(pagination,url,data,success,current){
+        getAjax:function(pagination,url,success){
              $.ajax({
                     url:url,
                     method:'get',
@@ -164,7 +164,7 @@
                         pageSize:pagination.pageSize//每页显示数量
                     },
                     success:function(result){
-                        success.call(pagination,result);
+                        success(result);
                     }
                 });
         },
@@ -181,18 +181,16 @@
         current=1,//当前页码。
         total=throwError(),//必填项，总页数
         pageSize=5,//每一页显示的个数
-        remote={
+        remoteParam={
             url:null,
             success:null
         },
     }={}){
+        debugger;
         console.log(arguments);
-        console.log(remote);
-        console.log(remote.params);
-        console.log(current);
         // var args=arguments;
         // 创建Pagination的实体
-        var pagination=new Pagination(this,current,total,pageSize,remote);
+        var pagination=new Pagination(this,current,total,pageSize,remoteParam);
         // 调用方法
         return pagination.init();
     }

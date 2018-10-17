@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="font-size: 16px">
 
 <head>
     <meta charset="UTF-8">
     <meta lang="zh">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=1920">
     <title>永坤控股</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{$config_siteurl}statics/default/ykkg/lib/bootstrap/bootstrap.css">
@@ -45,7 +45,7 @@
     <script src="{$config_siteurl}statics/default/ykkg/lib/jQuery/jquery-1.9.1.min.js"></script>
     <!-- Bootstrap -->
     <script src="{$config_siteurl}statics/default/ykkg/lib/bootstrap/bootstrap.js"></script>
-    <script src="{$config_siteurl}statics/default/ykkg/js/header.js"></script>
+    <!-- <script src="{$config_siteurl}statics/default/ykkg/js/header.js"></script> -->
     <script src="{$config_siteurl}statics/default/ykkg/js/common.js"></script>
 <!--     <script>
         //截取地址栏中url的参数值

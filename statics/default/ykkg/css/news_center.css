@@ -1,7 +1,9 @@
 #banner-slider img{
-    height: 56rem;
+    /* height: 56rem; */
     width: 100%;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 .carousel-indicators li{
     width:  1rem;
@@ -30,7 +32,7 @@
     border-radius:50%;
 }
 .carousel-item{
-    height:56rem;
+    /* height:56rem; */
 }
 .carousel-indicators .active{
     background-color:#C01920;
@@ -47,6 +49,8 @@
 }
 .breadcrumb-item + .breadcrumb-item::before{
     content:"》";
+    font-size: 1.37rem;
+    font-family: 'SourceHanSansCN-Medium';
 }
 .news-center video{
     width:100%;
@@ -102,6 +106,6 @@
     cursor:pointer;
 }
 .page-item.disabled{
-opacity: 0.7;
-color: #000;
+opacity: 0.7;
+color: #000;
 } 

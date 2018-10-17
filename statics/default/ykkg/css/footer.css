@@ -3,11 +3,13 @@
     background-color: #c01920;
     color: #fff;
     width: 100%;
+    font-family:'SourceHanSansCN-Regular';
 }
 .footer span{
     padding-right: 5px;
 }
 .footer .container{
+    width: 84.3rem;
     padding-top: 2.56rem;
     padding-bottom:2.56rem;
 }

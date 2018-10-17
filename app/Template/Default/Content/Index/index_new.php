@@ -42,7 +42,7 @@
             </div>
             <div class="container clearfix">
                 <div class="row">
-                    <div class="col-lg-6 col-md-12">
+                    <div class="col-6">
                         <div class="intro">
 <!--                            <h3 class="en">Connect the world with gold.</h3>-->
 <!--                            <p class="en">-->
@@ -54,11 +54,11 @@
 <!--                                <p class="zh">公司注册资金1.12亿元，集团业务涵盖纯金制品专属加工、销售、租赁、回购、贵金属T+D、公募基金、私募基金等众多领域，是中国黄金协会理事单位、上海黄金交易所协作单位、浙江省优秀金融企业、中国黄金交易客户满意最佳典范品牌企业。-->
 <!--                            </p>-->
                             {$about.content}
-                        </div>
                             <button class="btn btn-link" type="button" onclick="window.location.href='{:U('Index/intoYK',array('catid'=>13))}'">LEARN MORE 了解详情></button>
+                        </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="img-box hidden-md-down" >
+                    <div class="col-6">
+                        <div class="img-box" >
                             <img src="{$about.thumb}" alt="" class="img-fluid">
                         </div>
                     </div>
@@ -75,12 +75,16 @@
             <div class="news-img-box">
                 <div class="row">
                     <volist name="video" id="vo">
-                        <div class="col-lg-6 col-md-12 text-center ">
+                        <div class="col-6">
                             <div class="embed-responsive">
+                                <div class="news-img-text">
+                                    <p class="en">adfda</p> 
+                                    <p class="zh">我我我</p>
+                                </div>
+                            <img src="{$vo.img}" alt="">
                                <!-- <iframe src="http://open.iqiyi.com/developer/player_js/coopPlayerIndex.html?vid=a6175599346e1a3e5c9aaf49b9beab86&tvId=1055891000&accessToken=2.f22860a2479ad60d8da7697274de9346&appKey=3955c3425820435e86d0f4cdfe56f5e7&appId=1368&height=100%&width=100%" frameborder="0" allowfullscreen="true" width="100%" height="100%"></iframe> -->
                                <!-- <iframe height=498 width=510 src='http://player.youku.com/embed/XMzY4MjIwODA5Mg==' frameborder=0 'allowfullscreen'='true'></iframe> -->
                                <!-- <embed src="http://player.video.iqiyi.com/a6175599346e1a3e5c9aaf49b9beab86/0/0/v_19rrdhhkyc.swf-albumId=1055891000-tvId=1055891000-isPurchase=0-cnId=25" allowFullScreen="true" quality="high" width="480" height="350" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed> -->
-                                <?php echo htmlspecialchars_decode($vo['url']) ?>
                                     <!-- 为兼容移动端视频可播放，故放入ifream，样式未能修改 -->
                             </div>
                         </div>
@@ -101,23 +105,21 @@
             <h3 class="zh">永坤先后与上海造币有限公司、中国银行、中国工商银行、中国平安、中国人民保险等知名金融机构建立良好战略合作关系，共促金融体系发展。</h3>
             <div class="partner-img-box">
                <!-- 把每个合作伙伴logo放上去，并加跳转链接（百度搜）-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-2"><a href="http://www.boc.cn/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/1.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-2"><a href="http://www.picc.com/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/2.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-2"><a href="http://www.cgbchina.com.cn/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/3.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-2"><a href="http://www.spdb.com.cn/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/4.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-2"><a href="http://shzb.cbpm.cn/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/5.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-2"><a href="http://www.icbc.com.cn/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/6.png" alt="" class="img-fluid"></a></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-2"><a href="http://www.cmbc.com.cn/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/7.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-2"><a href="http://www.abchina.com/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/8.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-2"><a href="https://www.pingan.com/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/9.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-2"><a href="https://www.chinalife.com.cn/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/10.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-2"><a href="http://www.chinapost.com.cn/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/11.png" alt="" class="img-fluid"></a></div>
-                        <div class="col-2"><a href="http://www.citicbank.com/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/12.png" alt="" class="img-fluid"></a></div>
-                    </div>
+                <div class="row">
+                    <a href="http://www.boc.cn/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/1.png" alt="" class="img-fluid"></a>
+                    <a href="http://www.picc.com/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/2.png" alt="" class="img-fluid"></a>
+                    <a href="http://www.cgbchina.com.cn/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/3.png" alt="" class="img-fluid"></a>
+                    <a href="http://www.spdb.com.cn/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/4.png" alt="" class="img-fluid"></a>
+                    <a href="http://shzb.cbpm.cn/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/5.png" alt="" class="img-fluid"></a>
+                    <a href="http://www.icbc.com.cn/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/6.png" alt="" class="img-fluid"></a>
+                </div>
+                <div class="row">
+                    <a href="http://www.cmbc.com.cn/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/7.png" alt="" class="img-fluid"></a>
+                    <a href="http://www.abchina.com/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/8.png" alt="" class="img-fluid"></a>
+                    <a href="https://www.pingan.com/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/9.png" alt="" class="img-fluid"></a>
+                    <a href="https://www.chinalife.com.cn/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/10.png" alt="" class="img-fluid"></a>
+                    <a href="http://www.chinapost.com.cn/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/11.png" alt="" class="img-fluid"></a>
+                    <a href="http://www.citicbank.com/" target="_blank"><img src="{$config_siteurl}statics/default/ykkg/img/partner/12.png" alt="" class="img-fluid"></a>
                 </div>
             </div>
         </div>

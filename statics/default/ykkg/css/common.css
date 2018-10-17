@@ -3,6 +3,7 @@
   max-width: 90rem;
   margin:  0 auto;
   padding:  0;
+  border: 1px solid transparent;
 }
 /*手机端隐藏元素*/
 @media (max-width: 992px){
@@ -172,6 +173,10 @@
    src: url('../font/SourceHanSansCN-Bold.otf');
 }
 @font-face{
+  font-family: 'SourceHanSansCN-Medium';
+   src: url('../font/SourceHanSansCN-Medium.otf');
+}
+@font-face{
   font-family: 'SourceHanSansCN-Regular';
    src: url('../font/SourceHanSansCN-Regular.otf');
 }
@@ -195,7 +200,7 @@
 }
 button{
   font-family: 'ZpixEX2_EX';
-  font-size: 0.88rem;
+  font-size: 0.88rem !important;
 }
 /*重置bootstrap一些样式*/
 p{

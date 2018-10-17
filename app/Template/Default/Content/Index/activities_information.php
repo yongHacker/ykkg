@@ -34,7 +34,9 @@
                 </volist>
             </div>
         </div>
-        {$page}
+        <div class="pagination">
+            {$page}
+        </div>
     </div>
 </body>
 <script>
