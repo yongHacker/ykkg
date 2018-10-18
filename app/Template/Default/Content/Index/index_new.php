@@ -54,7 +54,7 @@
 <!--                                <p class="zh">公司注册资金1.12亿元，集团业务涵盖纯金制品专属加工、销售、租赁、回购、贵金属T+D、公募基金、私募基金等众多领域，是中国黄金协会理事单位、上海黄金交易所协作单位、浙江省优秀金融企业、中国黄金交易客户满意最佳典范品牌企业。-->
 <!--                            </p>-->
                             {$about.content}
-                            <button class="btn btn-link" type="button" onclick="window.location.href='{:U('Index/intoYK',array('catid'=>13))}'">LEARN MORE 了解详情></button>
+                            <button class="btn btn-link" type="button" onclick="window.location.href='{:U('Index/activity_detail',array('id'=>$about['id'],'catid'=>$about['catid']))}'">LEARN MORE 了解详情></button>
                         </div>
                     </div>
                     <div class="col-6">
@@ -74,14 +74,14 @@
         <div class="container clearfix">
             <div class="news-img-box">
                 <div class="row">
-                    <volist name="video" id="vo">
+                    <volist name="article" id="vo">
                         <div class="col-6">
                             <div class="embed-responsive">
-                                <a class="news-img-text" href="{:U('Index/news_center')}">
-                                    <p class="en">adfda</p> 
-                                    <p class="zh">我我我</p>
+                                <a class="news-img-text" href="{:U('Index/activity_detail',array('id'=>$vo['id'],'catid'=>$vo['catid']))}">
+                                    <p class="en">{$vo.tags}</p>
+                                    <p class="zh">{$vo.title}</p>
                                 </a>
-                            <img src="{$vo.img}" alt="" >
+                            <img src="{$vo.thumb}" alt="" >
                                <!-- <iframe src="http://open.iqiyi.com/developer/player_js/coopPlayerIndex.html?vid=a6175599346e1a3e5c9aaf49b9beab86&tvId=1055891000&accessToken=2.f22860a2479ad60d8da7697274de9346&appKey=3955c3425820435e86d0f4cdfe56f5e7&appId=1368&height=100%&width=100%" frameborder="0" allowfullscreen="true" width="100%" height="100%"></iframe> -->
                                <!-- <iframe height=498 width=510 src='http://player.youku.com/embed/XMzY4MjIwODA5Mg==' frameborder=0 'allowfullscreen'='true'></iframe> -->
                                <!-- <embed src="http://player.video.iqiyi.com/a6175599346e1a3e5c9aaf49b9beab86/0/0/v_19rrdhhkyc.swf-albumId=1055891000-tvId=1055891000-isPurchase=0-cnId=25" allowFullScreen="true" quality="high" width="480" height="350" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed> -->

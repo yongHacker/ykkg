@@ -44,11 +44,13 @@ class IndexController extends Base {
         $about_catid = M('category')->where($condition)->field('catid')->find();
         $about = M('article')->where(array('catid'=>$about_catid['catid']))->join('left join __ARTICLE_DATA__ on __ARTICLE__.id = __ARTICLE_DATA__.id')->find();
         //新闻中心
-        $video = M('video')->where(array('deleted'=>0))->order('id desc')->limit(4)->select();
-//        dump($video);exit;
+//        $video = M('video')->where(array('deleted'=>0))->order('id desc')->limit(4)->select();
+        $article = M('article')->where('catid=15')->order('listorder desc')->limit(4)->select();
+
         $this->assign('ad',$ad);
         $this->assign('about',$about);
-        $this->assign('video',$video);
+//        $this->assign('video',$video);
+        $this->assign('article',$article);
 		//seo分配到模板
 		$this->assign("SEO", $SEO);
 		//把分页分配到模板
