@@ -42,7 +42,6 @@
     <!-- news_center -->
     <div class="news-center container">
         <div class="row">
-            <volist name="video" id="vo">
             <!--要弄一个遮罩层，图片要覆盖在视频上方-->
             <volist name="video" id="vo">
             <div class="col-6">
