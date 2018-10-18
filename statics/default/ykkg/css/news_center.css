@@ -77,7 +77,24 @@
     padding-right:1.25rem;
     line-height: 0;
 }
-
+.carousel-control-prev-icon:hover{
+     background-color:rgba(0,0,0,0.45);
+}
+.carousel-control-prev-icon{
+    width: 4rem;
+    height: 4rem;
+    border-radius:50%;
+    background-image: url('../img/small/arrow_l.png');
+}
+.carousel-control-next-icon:hover{
+     background-color:rgba(0,0,0,0.45);
+}
+.carousel-control-next-icon{
+    width: 4rem;
+    height: 4rem;
+    border-radius:50%;
+    background-image: url('../img/small/arrow_r.png');
+}
 /* .pagination-box{
     display: flex;
     justify-content:  center;

@@ -1,5 +1,5 @@
 #banner-slider .carousel-inner img{
-    height: 56rem;
+    /* height: 56rem; */
     width: 100%;
     background-size: cover;
     background-position: center center;
@@ -141,6 +141,7 @@
   height: 100%;
   text-align: center;
   z-index: 6;
+  text-decoration: none;
 }
 .news-img-box img{
   width: 100%;
