@@ -21,6 +21,7 @@ body.intransparent .navbar{
 .navbar-brand{
   padding:0;
   margin: 0;
+  color: #525252 !important;
 }
 #brand img{
   width:10rem;

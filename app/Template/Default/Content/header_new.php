@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta lang="zh">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>永坤控股</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{$config_siteurl}statics/default/ykkg/lib/bootstrap/bootstrap.css">
@@ -19,7 +19,7 @@
 
 <body>
     <header>
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light">
         <div class="container">
            <a href="./index.php" class="navbar-brand" id="brand"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" ></a>
            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="aria-label">
@@ -45,7 +45,7 @@
     <script src="{$config_siteurl}statics/default/ykkg/lib/jQuery/jquery-1.9.1.min.js"></script>
     <!-- Bootstrap -->
     <script src="{$config_siteurl}statics/default/ykkg/lib/bootstrap/bootstrap.js"></script>
-    <!-- <script src="{$config_siteurl}statics/default/ykkg/js/header.js"></script> -->
+    <script src="{$config_siteurl}statics/default/ykkg/js/header.js"></script>
     <script src="{$config_siteurl}statics/default/ykkg/js/common.js"></script>
 <!--     <script>
         //截取地址栏中url的参数值
