@@ -19,7 +19,7 @@
 
 <body>
     <header>
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
            <a href="./index.php" class="navbar-brand" id="brand"><img src="{$config_siteurl}statics/default/ykkg/img/logo.png" alt="" ></a>
            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="aria-label">
