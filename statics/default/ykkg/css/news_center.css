@@ -49,6 +49,9 @@
     font-size:1.37rem;
     
 }
+.breadcrumb-item.active a{
+    color:#909090;
+}
 .breadcrumb-item + .breadcrumb-item::before{
     content:"》";
     font-size: 1.37rem;

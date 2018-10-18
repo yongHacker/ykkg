@@ -45,6 +45,8 @@ body.intransparent .navbar{
 }
 .nav-item img{
     vertical-align:text-top;
+    max-width: 2.18rem;
+    max-height: 1.87rem;
 }
 .nav-item p{
     margin:0;
