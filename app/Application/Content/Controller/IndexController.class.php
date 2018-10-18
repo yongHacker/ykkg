@@ -119,7 +119,7 @@ class IndexController extends Base {
     //新闻中心
     public function news_center(){
         $count = M('video')->where(array('deleted'=>0))->count();
-        $Page = $Page = $this->page($count, 2,I('page',1));
+        $Page = $Page = $this->page($count, 6,I('page',1));
         $video = M('video')->where(array('deleted'=>0))->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
         //轮播图
         $ad = M('position')->where(array('deleted'=>0))->order('posid desc')->select();
