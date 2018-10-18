@@ -48,11 +48,18 @@
 
 .intro{
   max-width: 39rem;
+  height: 32rem;
+  padding-bottom: 5.5rem;
   margin: 3rem auto 0;
-  /* max-height: 26rem; */
   text-overflow: ellipsis;
-  /* overflow: hidden; */
+  overflow: hidden;
   white-space: normal;
+}
+.button-box{
+  
+width: 39rem;
+  
+margin: 0 auto;
 }
 .about-us{
   background-color:#f7f7f7;
@@ -94,7 +101,7 @@
 .about-us button{
   font-size: 0.88rem;
   margin-bottom:3.12rem;
-  /* position: absolute; */
+  position: absolute;
   bottom: 0;
 }
 
@@ -110,7 +117,10 @@
   padding: 0;
 }
 .news-img-box .row .col-6:nth-of-type(2n+1){
-  padding-right: 1.25rem;
+  padding-right: 0.625rem;
+}
+.news-img-box .row .col-6:nth-of-type(2n+2){
+  padding-left: 0.625rem;
 }
 .news-img-box .row .col-6 .embed-responsive{
   height: 25.6rem;
