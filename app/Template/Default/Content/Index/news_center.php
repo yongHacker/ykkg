@@ -43,6 +43,7 @@
     <div class="news-center container">
         <div class="row">
             <!--要弄一个遮罩层，图片要覆盖在视频上方-->
+            <volist name="video" id="vo">
             <div class="col-6">
                 <div class="embed-responsive">
                     <!--<video src="" controls="true" poster="{$vo.img}" preload="auto"> 抱歉，您的浏览器不支持内嵌视频</video>-->
@@ -51,6 +52,7 @@
                 </div>
                 <h3>{$vo.title_zh}</h3>
             </div>
+            </volist>
         </div>
         <div class="pagination">
            <!--  <ul class="pagination">
