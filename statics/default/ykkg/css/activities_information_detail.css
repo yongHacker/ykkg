@@ -1,22 +1,29 @@
 .act-detail{
-    padding-top: 3rem;
+    padding-top: 3.18rem;
 }
 .act-detail h2{
     color:#C01920;
     font-size: 2rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
+    margin-bottom: 1.31rem;
+    font-family: 'SourceHanSansCN-Medium';
 }
 .act-detail p.act-detail-date{
     color: #525252;
     font-size:1.25rem;
-    font-weight:400;
+    font-family: 'SourceHanSansCN-Regular';
 }
 .act-detail .act-detail-imgbox{
     width: 75rem;
     height: 31.9rem;
-    padding-top: 3rem;
+    padding-top: 3.31rem;
     margin:0 auto;
+}
+.act-detail .act-detail-imgbox img{
+    width:100%;
+    height: 100%;
+}
+.act-detail-content{
+    margin:3.25rem 0 9.44rem;
 }
 .act-detail-content h3{
     font-size: 1rem;
@@ -27,5 +34,14 @@
 .act-detail-content p{
     color:#525252;
     text-indent: 2rem;
-    font-size: 1rem;
+    font-size: 0.86rem;
+}
+.act-detail-content .en{
+    font-family:'RobotoSlab-Regular';
+}
+.act-detail-content h3.zh{
+    font-family:'SourceHanSansCN-Bold';
+}
+.act-detail-content p.zh{
+    font-family:'SourceHanSansCN-Regular';
 }

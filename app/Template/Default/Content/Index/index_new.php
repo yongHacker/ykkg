@@ -77,11 +77,11 @@
                     <volist name="video" id="vo">
                         <div class="col-6">
                             <div class="embed-responsive">
-                                <div class="news-img-text">
+                                <a class="news-img-text" href="{:U('Index/news_center')}">
                                     <p class="en">adfda</p> 
                                     <p class="zh">我我我</p>
-                                </div>
-                            <img src="{$vo.img}" alt="">
+                                </a>
+                            <img src="{$vo.img}" alt="" >
                                <!-- <iframe src="http://open.iqiyi.com/developer/player_js/coopPlayerIndex.html?vid=a6175599346e1a3e5c9aaf49b9beab86&tvId=1055891000&accessToken=2.f22860a2479ad60d8da7697274de9346&appKey=3955c3425820435e86d0f4cdfe56f5e7&appId=1368&height=100%&width=100%" frameborder="0" allowfullscreen="true" width="100%" height="100%"></iframe> -->
                                <!-- <iframe height=498 width=510 src='http://player.youku.com/embed/XMzY4MjIwODA5Mg==' frameborder=0 'allowfullscreen'='true'></iframe> -->
                                <!-- <embed src="http://player.video.iqiyi.com/a6175599346e1a3e5c9aaf49b9beab86/0/0/v_19rrdhhkyc.swf-albumId=1055891000-tvId=1055891000-isPurchase=0-cnId=25" allowFullScreen="true" quality="high" width="480" height="350" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed> -->

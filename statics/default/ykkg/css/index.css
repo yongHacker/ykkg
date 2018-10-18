@@ -1,5 +1,5 @@
 #banner-slider .carousel-inner img{
-    /* height: 56rem; */
+    height: 56rem;
     width: 100%;
     background-size: cover;
     background-position: center center;
@@ -33,7 +33,7 @@
     background-image: url('../img/small/arrow_r.png');
 }
 .carousel-item{
-    /* height:56rem; */
+    max-height: 56rem;
 }
 .carousel-indicators .active{
     background-color:#C01920;
@@ -49,7 +49,7 @@
 .intro{
   max-width: 39rem;
   margin: 3rem auto 0;
-  /* height: 26rem; */
+  /* max-height: 26rem; */
   text-overflow: ellipsis;
   /* overflow: hidden; */
   white-space: normal;
@@ -63,7 +63,7 @@
 }
 .about-us .img-box img{
   width:100%;
-  height:100%;
+  height: auto;
 }
 .intro h3{
   color: #C01920;
@@ -94,22 +94,26 @@
 .about-us button{
   font-size: 0.88rem;
   margin-bottom:3.12rem;
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
 }
 
 /*news  */
 .news{
-  margin-bottom:3.25rem;
+  margin-bottom: 1.94rem;
 }
 .news button{
   margin-top:0.625rem;
 }
 .news-img-box .row .col-6{
   margin-bottom:1.25rem;
+  padding: 0;
+}
+.news-img-box .row .col-6:nth-of-type(2n+1){
+  padding-right: 1.25rem;
 }
 .news-img-box .row .col-6 .embed-responsive{
-  height:  25.6rem;
+  max-height: 25.6rem;
 }
 .news-img-box .embed-responsive:hover .news-img-text{
   display: flex;
@@ -129,25 +133,22 @@
   position: absolute;
 }
 .news-img-box .news-img-text{
-  
-position: absolute;
-  
-display: none;
-  
-justify-content: center;
-  
-flex-direction: column;
-  
-width: 100%;
-  
-height: 100%;
-  
-text-align: center;
-  
-z-index: 6;
+  position: absolute;
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  z-index: 6;
+}
+.news-img-box img{
+  width: 100%;
+  height:auto;
 }
 .news-img-box .news-img-text p{
-  color: #FFFEFE;
+  
+color: #FFFEFE;
 }
 .news-img-box .news-img-text p.en{
 font-family:'RobotoSlab-Bold';
@@ -173,12 +174,15 @@ font-size:1.13rem;
   margin-top: 3.06rem;
 }
 .partner-img-box{
-  width: 62.8rem;
+  max-width: 62.8rem;
   margin: 3.88rem auto;
 }
 .partner .row{
 justify-content: space-between;
 margin: 0;
+}
+.partner .row a{
+  border: 1px solid red;
 }
 .partner .row+.row{
   margin-top:2rem;

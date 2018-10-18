@@ -9,7 +9,7 @@
     padding-right: 5px;
 }
 .footer .container{
-    width: 84.3rem;
+    max-width: 84.3rem;
     padding-top: 2.56rem;
     padding-bottom:2.56rem;
 }
@@ -21,6 +21,6 @@
     margin-left:5px;
 }
 .footer img{
-    width: 18px;
-    height: 20px;
+    width: 1.13rem;
+    height: 1.25rem;
 }

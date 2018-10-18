@@ -21,8 +21,8 @@
                 <volist name="list" id="vo">
                 <a href="{:U('Index/activity_detail',array('id'=>$vo['id'],'catid'=>$vo['catid']))}">
                     <div class="act-item">
-                        <div class="act-item-imgbox hidden-md-down">
-                            <img src="{$vo.thumb}" alt="" class="img-fluid">
+                        <div class="act-item-imgbox">
+                            <img src="{$vo.thumb}" alt="">
                         </div>
                         <div class="act-item-content">
                             <h2>{$vo.title}</h2>

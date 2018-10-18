@@ -43,15 +43,16 @@
     <div class="news-center container">
         <div class="row">
             <!--要弄一个遮罩层，图片要覆盖在视频上方-->
-            <div class="col-lg-6 col-md-12 text-center">
+            <div class="col-6">
                 <div class="embed-responsive">
                     <!--<video src="" controls="true" poster="{$vo.img}" preload="auto"> 抱歉，您的浏览器不支持内嵌视频</video>-->
                     <!-- <embed src="http://player.video.iqiyi.com/04d4ed8fe6ab306ff2482b4df1d0ea39/0/0/v_19rr65m6jw.swf-albumId=1413828800-tvId=1413828800-isPurchase=0-cnId=25" allowFullScreen='true' quality='high' width='480' height='350' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed> -->
+                    <?php echo htmlspecialchars_decode($vo['url']) ?>
                 </div>
                 <h3>{$vo.title_zh}</h3>
             </div>
         </div>
-        <div class="pagination-box">
+        <div class="pagination">
            <!--  <ul class="pagination">
                 <li class="page-item"><a href="" class="page-link">首页</a></li>
                 <li class="page-item"><a href="" class="page-link">上一页</a></li>

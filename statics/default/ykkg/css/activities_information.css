@@ -1,8 +1,9 @@
 .act{
-    padding:2rem 0 6.31rem;
+    padding: 3.19rem 0 6.31rem;
 }
 .act a{
     text-decoration: none !important;
+    display: block;
 }
 .act-item{
     display:flex;
@@ -10,69 +11,46 @@
     align-items: center;
     justify-content: space-between;
 }
-a> .act-item {
-    margin-top:1rem;
+.act .col-12 a+a{
+    margin-top: 1.25rem;
 }
 .act .act-item-imgbox{
-    width:33rem;
+    width: 32.63rem;
     height:19rem;
-    margin-right:  1rem;
+    margin-right: 1.19rem;
     overflow: hidden;
 }
+.act .act-item-imgbox img{
+    width: 100%;
+    height: 100%;
+}
 .act .act-item-content{
-    flex: 1;
+    display: flex;
+    width: 56.25rem;
     height: 19rem;
-    align-items: center;
+    flex-direction:  column;
+    padding: 2.44rem 0 2.5rem 2.81rem;
+    justify-content:  space-between;
     background-color: #F7F7F7;
 }
 .act .act-item-content h2{
     color:#C01920;
     font-size:1.25rem;
-    font-weight:500;
-    margin:2rem 0 3rem 3rem;
+    font-family:'SourceHanSansCN-Medium';
 }
 .act .act-item-content p{
     color:#525252;
     text-indent:2rem;
-    margin:0 0 5rem 3rem;
+    font-size:  0.88rem;
+    font-family: 'SourceHanSansCN-Regular';
+    max-height: 10rem;
+    overflow:  hidden;
 }
 .act .act-item-content p.act-item-date{
     font-size:0.88rem;
-    text-indent:unset;
-    margin:0 0 0 3rem;
+    text-indent: unset;
 }
 /*分页*/
 .pagination{
-    justify-content: center;
     margin-top:3.69rem;
-}
-.pagination a{
-    display: block;
-    width:2rem;
-    line-height: 1.56rem;
-    color: #060001;
-    font-size: 0.88rem;
-    font-family: 'SourceHanSansCN-Regular';
-    white-space: nowrap;
-    text-align: center;
-}
-.pagination a.active{
-    border:1px solid #E60012;
-    border-radius:4px;
-    color:#E60012;
-}
-.pagination a.active:nth-of-type(1){
-    border:0;
-    color:#060001;
-}
-.pagination a.active:nth-last-of-type(2){
-    border:0;
-    color:#060001;
-}
-.pagination a.active:nth-last-of-type(1){
-    border:0;
-    color:#060001;
-}
-.pagination a+a{
-    margin-left: 1.25rem;
 }

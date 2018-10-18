@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta lang="zh">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=1920">
+    <meta name="viewport" content="width=device-width">
     <title>永坤控股</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{$config_siteurl}statics/default/ykkg/lib/bootstrap/bootstrap.css">

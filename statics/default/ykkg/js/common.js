@@ -43,4 +43,6 @@ $(function(){
   });    
 })
 // 分页按钮点击active切换
-
+$(".pagination").on('click','a',function(){
+  $(this).addClass('active').siblings().removeClass('active');
+})
