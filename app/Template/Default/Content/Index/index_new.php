@@ -54,8 +54,10 @@
 <!--                                <p class="zh">公司注册资金1.12亿元，集团业务涵盖纯金制品专属加工、销售、租赁、回购、贵金属T+D、公募基金、私募基金等众多领域，是中国黄金协会理事单位、上海黄金交易所协作单位、浙江省优秀金融企业、中国黄金交易客户满意最佳典范品牌企业。-->
 <!--                            </p>-->
                             {$about.content}
-                            <button class="btn btn-link" type="button" onclick="window.location.href='{:U('Index/activity_detail',array('id'=>$about['id'],'catid'=>$about['catid']))}'">LEARN MORE 了解详情></button>
                         </div>
+                            <div class="button-box">
+                                <button class="btn btn-link" type="button" onclick="window.location.href='{:U('Index/activity_detail',array('id'=>$about['id'],'catid'=>$about['catid']))}'">LEARN MORE 了解详情></button>
+                            </div>
                     </div>
                     <div class="col-6">
                         <div class="img-box" >
