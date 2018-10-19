@@ -48,18 +48,19 @@
 
 .intro{
   max-width: 39rem;
-  height: 32rem;
-  padding-bottom: 5.5rem;
+  height: 26rem;
+  /* padding-bottom: 5.5rem; */
   margin: 3rem auto 0;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: normal;
 }
 .button-box{
-  
-width: 39rem;
-  
-margin: 0 auto;
+  width: 39rem;
+  margin: 0 auto;
+  margin-bottom: 3.12rem;
+  position: relative;
+  bottom: 0;
 }
 .about-us{
   background-color:#f7f7f7;
@@ -100,9 +101,6 @@ margin: 0 auto;
 }
 .about-us button{
   font-size: 0.88rem;
-  margin-bottom:3.12rem;
-  position: absolute;
-  bottom: 0;
 }
 
 /*news  */
