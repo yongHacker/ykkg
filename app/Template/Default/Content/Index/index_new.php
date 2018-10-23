@@ -12,9 +12,9 @@
     <div class="carousel slide" id="banner-slider" data-ride="carousel">
         <!-- 指示符 -->
         <ul class="carousel-indicators">
-            <li data-target="#banner-slider" data-slide-to="0" class="active"></li>
+            <!-- <li data-target="#banner-slider" data-slide-to="0" class="active"></li>
             <li data-target="#banner-slider" data-slide-to="1"></li>
-            <li data-target="#banner-slid er" data-slide-to="2"></li>
+            <li data-target="#banner-slid er" data-slide-to="2"></li> -->
         </ul>
         <!-- 轮播图片 -->
         <div class="carousel-inner">
@@ -129,8 +129,16 @@
     <template file="Content/footer_new.php"/>
 </body>
 <script>
+    $(function () {
     //轮播图
     $('.carousel-inner .carousel-item:first').addClass('active');
+    //指示器
+    $('.carousel .carousel-inner').find('img').each(function(index) {
+        var li='<li data-target="#banner-slider" data-slide-to='+index+'"></li>';
+        $('.carousel .carousel-indicators').append(li);
+    });
+    $('.carousel .carousel-indicators li:first').addClass('active');
 
+    });
 </script>
 </html>
