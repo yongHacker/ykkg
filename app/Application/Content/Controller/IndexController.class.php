@@ -147,7 +147,6 @@ class IndexController extends Base {
             $child[$k] = M('category')->where(array('catid'=>$v))->find();
             $child[$k]['article'] = M('article')->where(array('catid'=>$v))->join('left join __ARTICLE_DATA__ on __ARTICLE__.id = __ARTICLE_DATA__.id')->order('listorder desc')->find();
         }
-
         $this->assign('catData',$catData);
         $this->assign('child',$child);
     }

@@ -42,7 +42,7 @@
                             <img src="{$vo['article']['thumb']}" alt="">
                         </div>
                         {$vo['article']['content']}
-                        <button class="btn btn-link" type="button" onclick="window.location.href='./news_center.php'">LEARN MORE 了解详情></button>
+                        <button class="btn btn-link" type="button" onclick="window.location.href='{:U('Index/activity_detail',array('id'=>$vo['article']['id'],'catid'=>$vo['article']['catid']))}'">LEARN MORE 了解详情></button>
                     </div>
                 </volist>
                 <div class="tab-pane fade" id="investment">investment</div>
