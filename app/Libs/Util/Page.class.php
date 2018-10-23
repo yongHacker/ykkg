@@ -289,7 +289,11 @@ class Page {
                 if ($this->Static_Size && $cfg['pageindex'] - 1 <= $this->Static_Size) {
                     $pPrev = '<a href="' . str_replace('*', $cfg['pageindex'] - 1, $this->urlParameters($_GET)) . '">' . $cfg['prev'] . '</a>';
                 } else {
-                    $pPrev = '<a href="' . str_replace('*', $cfg['pageindex'] - 1, $cfg['link']) . '">' . $cfg['prev'] . '</a>';
+                    if ($cfg['pageindex']-1 < 1){
+                        $pPrev = '<a href="' . str_replace('*', $cfg['pageindex'], $cfg['link']) . '">' . $cfg['prev'] . '</a>';
+                    }else {
+                        $pPrev = '<a href="' . str_replace('*', $cfg['pageindex'] - 1, $cfg['link']) . '">' . $cfg['prev'] . '</a>';
+                    }
                 }
 
 
