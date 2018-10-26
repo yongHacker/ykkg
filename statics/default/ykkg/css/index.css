@@ -71,12 +71,19 @@ bottom: 0;
   background-color:#f7f7f7;
 }
 .about-us .img-box{
-  max-width: 44.3rem;
-  max-height: 35rem;
+  width: 44.3rem;
+  height: 35rem;
+  overflow: hidden;
 }
 .about-us .img-box img{
-  width:100%;
+  width: 100%;
   height: auto;
+}
+.about-us .row{
+  margin:0;
+}
+.about-us .col-6{
+  padding:0;
 }
 .intro h3{
   color: #C01920;
