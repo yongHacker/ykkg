@@ -17,7 +17,7 @@
     </div>
     <div class="content container-fluid">
         <div class="row">
-            <div class="col-5">
+            <div class="col-4">
                 <ul class="nav flex-column" role="tablist">
                 <volist name="child" id="vo">
                     <li class="nav-item">
@@ -32,7 +32,7 @@
                 </volist>
             </ul>
             </div>
-            <div class="col-7 tab-content" id="tabContent">
+            <div class="col-8 tab-content" id="tabContent">
                 <volist name="child" id="vo">
                     <div class="tab-pane fade in show" id="{$vo['catid']}">
                         <div class="logo-box">
