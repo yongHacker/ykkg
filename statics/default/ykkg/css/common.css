@@ -230,7 +230,7 @@ h1,h2,h3,h4{
 }
 .pagination a.active{
     border:1px solid #E60012;
-    border-radius:4px;
+    border-radius:0.25rem;
     color:#E60012;
 }
 /*前两后个链接 active不变色 间距调整 */
